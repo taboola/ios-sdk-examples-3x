@@ -1,0 +1,120 @@
+//
+//  ClassicTableViewManagedByPublisherController.m
+//  TaboolaSDKExampleObjective-C
+//
+//  Created by Liad Elidan on 02/06/2020.
+//  Copyright © 2020 Liad Elidan. All rights reserved.
+//
+
+#import "ClassicTableViewManagedByPublisherController.h"
+#import <TaboolaSDK/TaboolaSDK.h>
+#import "RandomColor.h"
+
+@interface ClassicTableViewManagedByPublisherController () <TBLClassicPageDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+// TBLClassicPage holds Taboola Widgets/Feed for a specific view
+@property (nonatomic, strong) TBLClassicPage* classicPage;
+// TBLClassicUnit object represnting Widget/Feed
+@property (nonatomic, strong) TBLClassicUnit* taboolaWidgetPlacement;
+@property (nonatomic, strong) TBLClassicUnit* taboolaFeedPlacement;
+
+@end
+
+@implementation ClassicTableViewManagedByPublisherController
+
+#pragma mark - ViewController lifecycle
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self taboolaInit];
+}
+
+-(void)taboolaInit {
+    _classicPage = [[TBLClassicPage alloc]initWithPageType:@"article" pageUrl:@"http://www.example.com" delegate:self scrollView:_tableView];
+    
+    _taboolaWidgetPlacement = [_classicPage createUnitWithPlacementName:@"Below Article" mode:@"alternating-widget-without-video-1x4" placementType:PlacementTypeWidget];
+     [_taboolaWidgetPlacement fetchContent];
+    
+    _taboolaFeedPlacement = [_classicPage createUnitWithPlacementName:@"Feed without video" mode:@"thumbs-feed-01" placementType:PlacementTypeFeed];
+    [_taboolaFeedPlacement fetchContent];
+}
+
+#pragma mark - UITableViewDatasource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == taboolaWidgetSection){
+        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"TaboolaTableViewCell" forIndexPath:indexPath];
+        [self clearTaboolaInReusedCell:cell];
+        [cell.contentView addSubview:_taboolaWidgetPlacement];
+        return cell;
+    }
+    else if (indexPath.section == taboolaFeedSection){
+        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"TaboolaTableViewCell" forIndexPath:indexPath];
+        [self clearTaboolaInReusedCell:cell];
+        [cell.contentView addSubview:_taboolaFeedPlacement];
+        return cell;
+    }
+    else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RandomCell" forIndexPath:indexPath];
+        cell.contentView.backgroundColor = [RandomColor setRandomColor];
+        return cell;
+    }
+}
+
+-(void)clearTaboolaInReusedCell:(UITableViewCell*)cell {
+    for (UIView *view in [cell.contentView subviews]) {
+        [view removeFromSuperview];
+    }
+}
+    
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return totalSections;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+        if (indexPath.section == taboolaWidgetSection) {
+            return _taboolaWidgetPlacement.placementHeight;
+        }
+        else if (indexPath.section == taboolaFeedSection) {
+            return _taboolaFeedPlacement.placementHeight;
+        }
+        return 200;
+}
+
+-(void)dealloc {
+    [_taboolaWidgetPlacement reset];
+    [_taboolaFeedPlacement reset];
+}
+
+#pragma mark - TBLClassicPageDelegate
+
+-(void)taboolaView:(UIView *)taboolaView didLoadOrChangeHeightOfPlacementNamed:(NSString *)placementName withHeight:(CGFloat)height {
+    NSLog(@"%@", placementName);
+    
+    if ([placementName containsString:widgetPlacement]) {
+        [_taboolaWidgetPlacement setFrame:CGRectMake(0, 0, self.view.frame.size.width, _taboolaWidgetPlacement.placementHeight)];
+    } else {
+        [_taboolaFeedPlacement setFrame:CGRectMake(_taboolaFeedPlacement.frame.origin.x, _taboolaFeedPlacement.frame.origin.y, self.view.frame.size.width, _taboolaFeedPlacement.placementHeight)];
+    }
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+}
+
+- (void)taboolaView:(UIView *)taboolaView didFailToLoadPlacementNamed:(NSString *)placementName withErrorMessage:(NSString *)error {
+    NSLog(@"%@", error);
+}
+
+- (BOOL)onItemClick:(NSString *)placementName withItemId:(NSString *)itemId withClickUrl:(NSString *)clickUrl isOrganic:(BOOL)organic {
+    if (!organic) {
+        return NO;
+    }
+    return YES;
+}
+
+@end

@@ -1,0 +1,6 @@
+framework module Pods_TaboolaSDKExampleObjective_C {
+  umbrella header "Pods-TaboolaSDKExampleObjective-C-umbrella.h"
+
+  export *
+  module * { export * }
+}

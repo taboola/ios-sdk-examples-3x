@@ -1,0 +1,16 @@
+PODS:
+  - TaboolaSDK (3.0.0-1-beta)
+
+DEPENDENCIES:
+  - TaboolaSDK (from `/Users/liad.e/ios-sdk`)
+
+EXTERNAL SOURCES:
+  TaboolaSDK:
+    :path: "/Users/liad.e/ios-sdk"
+
+SPEC CHECKSUMS:
+  TaboolaSDK: 7e930c76373c706604482c41a28c6b1f5691a242
+
+PODFILE CHECKSUM: 824ffd3bb323f12680b353cb8b0a1810b9ab20be
+
+COCOAPODS: 1.9.0

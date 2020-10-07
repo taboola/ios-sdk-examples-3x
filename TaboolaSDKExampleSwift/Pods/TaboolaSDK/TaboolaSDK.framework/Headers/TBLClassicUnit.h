@@ -11,16 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/*! @brief Enum. Determines the placement's type (Feed or Widget). */
-typedef enum {
-    PlacementTypeFeed,
-    PlacementTypeWidget
-} PlacementType;
-
 @interface TBLClassicUnit : UIView
 
 /*! @brief Optional. Use to override scrollIntercept. */
 @property(nonatomic, readwrite) BOOL overrideScrollIntercept;
+
+/*! @brief Optional. Controls whether the widget content is scrollable or not (default is enabled). */
+@property(nonatomic, readwrite) BOOL scrollEnable;
 
 /*! @brief Optional. Sets additional styling CSS rules for the widget. (e.g. Use it to control the widget's background). */
 @property (nonatomic, strong) NSString *optionalWidgetStyle;
@@ -36,13 +33,6 @@ typedef enum {
 
 /*! @brief Optional. get the placement height. */
 @property (nonatomic) CGFloat placementHeight;
-
-/*!
- @brief Get PlacementType of TaboolaView - Widget or Feed
-
- @return PlacementType enum describes Widget or Feed
-*/
-- (PlacementType)placementType;
 
 /*!
  @brief Resets TaboolaView - All conents and pushed commands are cleared. new commands must be pushed before fetching data again.

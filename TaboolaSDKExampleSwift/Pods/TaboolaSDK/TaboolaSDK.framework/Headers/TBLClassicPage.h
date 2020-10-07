@@ -60,12 +60,12 @@ typedef NS_ENUM(NSInteger, FetchingPolicy) {
   @discussion A must function that creates TBLClassicUnit in order to build Taboola widgets
   @return TBLClassicUnit object (Taboola widget / Feed)
  */
-- (TBLClassicUnit*)createUnitWithPlacementName:(NSString *)placementName mode:(NSString *)mode placementType:(PlacementType)type;
+- (TBLClassicUnit*)createUnitWithPlacementName:(NSString *)placementName mode:(NSString *)mode;
 
 /*!
  @discussion A must function that builds a unit with an object TBLClassicUnit that was created in the Storyboard/xib
 */
-- (void)addUnit:(TBLClassicUnit*)unit placementName:(NSString *)placementName mode:(NSString *)mode placementType:(PlacementType)type;
+- (void)addUnit:(TBLClassicUnit*)unit placementName:(NSString *)placementName mode:(NSString *)mode;
 
 /*!
  @discussion Call this function when webviews refresh is needed (all TBLClassicUnits included in the controller will be refreshed)

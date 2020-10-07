@@ -52,9 +52,6 @@ TBLNativePage is the first object to initialize, and is being used to fetch Tabo
 /*! @brief Set according to your Taboola account manager (Usually will be "mix"). */
 @property (nonatomic, strong) NSString *targetType;
 
-/*! @brief Set dictionary with relevant property keys and data values. */
-@property (nonatomic, strong) NSDictionary *pageExtraProperties;
-
 /*!
 @discussion Init function for the TBLClassicPage
 

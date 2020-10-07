@@ -9,6 +9,8 @@
 #ifndef TaboolaWebDelegate_h
 #define TaboolaWebDelegate_h
 #import <UIKit/UIKit.h>
+#import "TBLClassicUnit.h"
+#import <WebKit/WebKit.h>
 
 @protocol TBLWebDelegate <NSObject>
 
@@ -32,7 +34,7 @@
 @param placementName The current placement (widget or feed)
 @param height TaboolaView's current height
 */
-- (void)webView:(UIView *)webView didLoadPlacementNamed:(NSString *)placementName withHeight:(CGFloat)height;
+- (void)webView:(WKWebView *)webView didLoadPlacementNamed:(NSString *)placementName withHeight:(CGFloat)height;
 
 /*!
 @discussion Triggered after Taboola is failed to render.
@@ -41,22 +43,8 @@
 @param placementName The current placement (widget or feed)
 @param error The error recieved when TaboolaView is failed to render
 */
-- (void)webView:(UIView *)webView didFailToLoadPlacementNamed:(NSString *)placementName withErrorMessage:(NSString *)error;
+- (void)webView:(WKWebView *)webView didFailToLoadPlacementNamed:(NSString *)placementName withErrorMessage:(NSString *)error;
 
-/*!
- @discussion Triggered when the TaboolaView is scrolled to top
- 
- @param webView The widget itself
-*/
-- (void)scrollViewDidScrollToTopWebView:(UIView *)webView;
-
-/*!
- @discussion Triggered when there is an action is managed by the publisher
- 
- @param actionType The action's identifier
- @param data Dictionary that contains the action's key-value data
-*/
-- (void)clickedOnAction:(NSNumber *)actionType data:(NSDictionary *)data;
 
 @end
 

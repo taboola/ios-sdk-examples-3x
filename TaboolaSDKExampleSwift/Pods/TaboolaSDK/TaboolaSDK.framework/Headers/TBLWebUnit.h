@@ -27,7 +27,6 @@ TBLWebUnit is the first object to initialize, and is being used to fetch Taboola
 /**
 Refreshes the recommendations.
  
-@param webView webview with HTML/JS widget
 */
 - (void)refreshContent;
 

@@ -67,7 +67,7 @@ extension NativeViewController: UITableViewDataSource {
 }
 
 extension NativeViewController: TBLNativePageDelegate {
-    func taboolaView(_ taboolaView: UIView!, didLoadOrChangeHeightOfPlacementNamed placementName: String!, withHeight height: CGFloat) {
+    func taboolaView(_ taboolaView: UIView!, didLoadOrResizePlacement placementName: String!, withHeight height: CGFloat, placementType: PlacementType) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
         }
     

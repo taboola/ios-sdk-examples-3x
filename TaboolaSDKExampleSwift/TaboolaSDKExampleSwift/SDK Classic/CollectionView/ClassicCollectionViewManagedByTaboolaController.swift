@@ -27,13 +27,13 @@ class ClassicCollectionViewManagedByTaboolaController: UIViewController {
     func taboolaInit(){
         classicPage = TBLClassicPage.init(pageType: "article", pageUrl: "http://www.example.com", delegate: self, scrollView: self.collectionView)
         
-        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Below Article", mode: "alternating-widget-without-video-1x4", placementType: PlacementTypeWidget)
+        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Below Article", mode: "alternating-widget-without-video-1x4")
         
         if let taboolaWidgetPlacement = taboolaWidgetPlacement{
             taboolaWidgetPlacement.fetchContent()
         }
         
-        taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: "Feed without video", mode: "thumbs-feed-01", placementType: PlacementTypeFeed)
+        taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: "Feed without video", mode: "thumbs-feed-01")
 
         if let taboolaFeedPlacement = taboolaFeedPlacement{
             taboolaFeedPlacement.fetchContent()
@@ -112,9 +112,9 @@ extension ClassicCollectionViewManagedByTaboolaController: UICollectionViewDataS
 }
 
 extension ClassicCollectionViewManagedByTaboolaController: TBLClassicPageDelegate {
-    func taboolaView(_ taboolaView: UIView!, didLoadOrChangeHeightOfPlacementNamed placementName: String!, withHeight height: CGFloat) {
+    func taboolaView(_ taboolaView: UIView!, didLoadOrResizePlacement placementName: String!, withHeight height: CGFloat, placementType: PlacementType) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
-        }
+    }
     
     func taboolaView(_ taboolaView: UIView!, didFailToLoadPlacementNamed placementName: String!, withErrorMessage error: String!) {
         print(error as Any)

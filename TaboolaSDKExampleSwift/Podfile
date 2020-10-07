@@ -6,7 +6,7 @@ source 'https://cdn.cocoapods.org/'
 
 target 'TaboolaSDKExampleSwift' do
   use_frameworks!
-  pod 'TaboolaSDK', '3.0.0'
+  pod 'TaboolaSDK', '3.0.3'
 
   end
 

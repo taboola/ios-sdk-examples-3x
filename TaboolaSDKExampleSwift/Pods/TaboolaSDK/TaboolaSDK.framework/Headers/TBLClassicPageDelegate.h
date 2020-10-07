@@ -10,6 +10,12 @@
 #define TBLClassicPageDelegate_h
 #import <UIKit/UIKit.h>
 
+/*! @brief Enum. Determines the placement's type (Feed or Widget). */
+typedef enum {
+    PlacementTypeFeed,
+    PlacementTypeWidget,
+    PlacementTypeWidgetNone
+} PlacementType;
 /*!
  This protocol should be implemented by the host app. TaboolaView sends various lifecycle events to the delegate, to allow more flexibility for the host app.
  */
@@ -36,7 +42,7 @@
 @param placementName The current placement (widget or feed)
 @param height TaboolaView's current height
 */
-- (void)taboolaView:(UIView *)taboolaView didLoadOrChangeHeightOfPlacementNamed:(NSString *)placementName withHeight:(CGFloat)height;
+- (void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType;
 
 /*!
 @discussion Triggered after TaboolaView is failed to render.

@@ -44,7 +44,7 @@ class ClassicFrameScrollViewController: UIViewController {
         classicPage = TBLClassicPage.init(pageType: "article", pageUrl: "http://www.example.com", delegate: self, scrollView: self.scrollView)
         
         // Creating the first Taboola object - Widget
-        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Below Article", mode: "alternating-widget-without-video-1x4", placementType: PlacementTypeWidget)
+        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Below Article", mode: "alternating-widget-without-video-1x4")
     
         if let taboolaWidgetPlacement = taboolaWidgetPlacement{
             // Creating the frame of the Widget
@@ -59,7 +59,7 @@ class ClassicFrameScrollViewController: UIViewController {
             scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: topText.frame.size.height +  taboolaWidgetPlacement.placementHeight)
             
             // Creating the second Taboola object - Feed
-            taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: "Feed without video", mode: "thumbs-feed-01 video", placementType: PlacementTypeFeed)
+            taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: "Feed without video", mode: "thumbs-feed-01 video")
             
             if let taboolaFeedPlacement = taboolaFeedPlacement{
                 taboolaFeedPlacement.fetchContent()
@@ -95,7 +95,7 @@ class ClassicFrameScrollViewController: UIViewController {
 }
 
 extension ClassicFrameScrollViewController: TBLClassicPageDelegate {
-    func taboolaView(_ taboolaView: UIView!, didLoadOrChangeHeightOfPlacementNamed placementName: String!, withHeight height: CGFloat) {
+    func taboolaView(_ taboolaView: UIView!, didLoadOrResizePlacement placementName: String!, withHeight height: CGFloat, placementType: PlacementType) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
         if placementName == Constants.widgetPlacement{
             if let taboolaWidgetPlacement = taboolaWidgetPlacement {

@@ -134,6 +134,8 @@ Agreement will be brought exclusively in the federal or state courts located in 
 and the parties hereby irrevocably consent to personal jurisdiction and venue therein.
 
 </string>
+			<key>License</key>
+			<string>Taboola Mobile SDK License</string>
 			<key>Title</key>
 			<string>TaboolaSDK</string>
 			<key>Type</key>

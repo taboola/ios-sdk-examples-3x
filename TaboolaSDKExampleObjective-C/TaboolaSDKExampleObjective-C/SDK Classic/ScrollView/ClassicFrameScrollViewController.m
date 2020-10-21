@@ -46,7 +46,7 @@
 -(void)taboolaInit {
     _classicPage = [[TBLClassicPage alloc]initWithPageType:@"article" pageUrl:@"http://www.example.com" delegate:self scrollView:_scrollView];
     
-    _taboolaFeedPlacement = [_classicPage createUnitWithPlacementName:@"Feed without video" mode:@"thumbs-feed-01 video" placementType:PlacementTypeFeed];
+    _taboolaFeedPlacement = [_classicPage createUnitWithPlacementName:@"Feed without video" mode:@"thumbs-feed-01 video"];
     [_taboolaFeedPlacement setFrame:CGRectMake(0, _topText.frame.size.height, self.view.frame.size.width, 200)];
     [_scrollView addSubview:_taboolaFeedPlacement];
 
@@ -63,7 +63,7 @@
 
 #pragma mark - TBLClassicPageDelegate
 
-- (void)taboolaView:(UIView *)taboolaView didLoadOrChangeHeightOfPlacementNamed:(NSString *)placementName withHeight:(CGFloat)height {
+-(void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType{
     NSLog(@"%@", placementName);
 
     _scrollView.contentSize = CGSizeMake(self.view.frame.size.width, _taboolaFeedPlacement.placementHeight + _topText.frame.size.height);

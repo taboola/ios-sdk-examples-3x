@@ -205,6 +205,7 @@
 				7271C707246D49670003204A /* Frameworks */,
 				7271C708246D49670003204A /* Resources */,
 				1BDB6D6F722AE58267C9D815 /* [CP] Embed Pods Frameworks */,
+				09EF62546E25498CB6D31EF2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,15 +263,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09EF62546E25498CB6D31EF2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaboolaSDKExampleObjective-C/Pods-TaboolaSDKExampleObjective-C-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaboolaSDKExampleObjective-C/Pods-TaboolaSDKExampleObjective-C-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaboolaSDKExampleObjective-C/Pods-TaboolaSDKExampleObjective-C-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1BDB6D6F722AE58267C9D815 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaboolaSDKExampleObjective-C/Pods-TaboolaSDKExampleObjective-C-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaboolaSDKExampleObjective-C/Pods-TaboolaSDKExampleObjective-C-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

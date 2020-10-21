@@ -35,9 +35,9 @@
 -(void)taboolaInit {
     _classicPage = [[TBLClassicPage alloc]initWithPageType:@"article" pageUrl:@"http://www.example.com" delegate:self scrollView:_scrollView];
     
-    _taboolaWidgetPlacement = [_classicPage createUnitWithPlacementName:@"Above Article" mode:@"alternating-widget-without-video-1x1" placementType:PlacementTypeWidget];
+    _taboolaWidgetPlacement = [_classicPage createUnitWithPlacementName:@"Above Article" mode:@"alternating-widget-without-video-1x1"];
     
-    _taboolaFeedPlacement = [_classicPage createUnitWithPlacementName:@"Feed without video" mode:@"thumbs-feed-01 video" placementType:PlacementTypeFeed];
+    _taboolaFeedPlacement = [_classicPage createUnitWithPlacementName:@"Feed without video" mode:@"thumbs-feed-01 video"];
     _taboolaFeedPlacement.clipsToBounds = YES;
 
     [_taboolaWidgetPlacement fetchContent];
@@ -70,7 +70,7 @@
 
 #pragma mark - TBLClassicPageDelegate
 
-- (void)taboolaView:(UIView *)taboolaView didLoadOrChangeHeightOfPlacementNamed:(NSString *)placementName withHeight:(CGFloat)height {
+-(void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType{
     NSLog(@"%@", placementName);
 }
 

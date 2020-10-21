@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7F6415DE1BA4E1F2CF2767393A451475"
-               BuildableName = "TaboolaSDK.framework"
+               BuildableName = "TaboolaSDK"
                BlueprintName = "TaboolaSDK"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

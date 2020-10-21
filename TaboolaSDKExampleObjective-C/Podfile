@@ -1,24 +1,12 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+source 'https://github.com/taboola/ios-sdk-beta.git'
+source 'https://cdn.cocoapods.org/'
+
 target 'TaboolaSDKExampleObjective-C' do
   use_frameworks!
-  pod 'TaboolaSDK', :path=> '/Users/liad.e/ios-sdk'
+  pod 'TaboolaSDK', '3.0.4'
+
   end
-  
-  install! 'cocoapods', :disable_input_output_paths => true
-  
-  # Workaround for Cocoapods issue #7606
-  
-  post_install do |installer|
-  
-      installer.pods_project.build_configurations.each do |config|
-  
-          config.build_settings.delete('CODE_SIGNING_ALLOWED')
-  
-          config.build_settings.delete('CODE_SIGNING_REQUIRED')
-  
-      end
-  
-  end
-  
+

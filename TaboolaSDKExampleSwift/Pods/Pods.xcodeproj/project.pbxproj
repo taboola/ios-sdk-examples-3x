@@ -9,35 +9,35 @@
 /* Begin PBXAggregateTarget section */
 		7F6415DE1BA4E1F2CF2767393A451475 /* TaboolaSDK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 97851FE8E21F3D80BB3A94C6DEA03D47 /* Build configuration list for PBXAggregateTarget "TaboolaSDK" */;
+			buildConfigurationList = 95C14D70C28A84D53ACDF7B9748C5C2F /* Build configuration list for PBXAggregateTarget "TaboolaSDK" */;
 			buildPhases = (
 			);
 			dependencies = (
-				2076D5B54BCE83C188FF62E2D786C34F /* PBXTargetDependency */,
+				3CD5E297EFFEAD4E190FF5D98A9C3EF5 /* PBXTargetDependency */,
 			);
 			name = TaboolaSDK;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		090C813B608CA91DA2601098D3FDD167 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		13648BBC7D1CFA27313A9B0BAE8FA7B4 /* Pods-TaboolaSDKExampleSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 094CFA73436216CB6865427BE7BD8CF5 /* Pods-TaboolaSDKExampleSwift-dummy.m */; };
-		3CED1F7112F9E4E130E7BEC84613CD21 /* TBLTableCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = ADB6E7B05F13B74FF969DFC5E707AE79 /* TBLTableCell.nib */; };
-		A5BDFCE9EC7A0D22157744DB8E3E112B /* Pods-TaboolaSDKExampleSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 446072B755EA32EE1D8710417727EAC0 /* Pods-TaboolaSDKExampleSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B3CC667C65DB629853E6F60D50AA0F37 /* TaboolaSDKResource-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8320B9BE1BF3B7C86F9C62A80BE5AEAC /* TaboolaSDKResource-Info.plist */; };
-		DA10CCD9D2B8EB21CE31F3DBD75432D5 /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 5B02ADBF2A20A938356B867289AAD56D /* template.html */; };
-		E21059496E7F604EE3B5BDB82ED71099 /* TBLCollectionCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = D918D0DB6ECE330226CE694DD074836B /* TBLCollectionCell.nib */; };
+		067DEDAA6A7F097F7CA5B558697CD6A6 /* TaboolaSDKResource-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8320B9BE1BF3B7C86F9C62A80BE5AEAC /* TaboolaSDKResource-Info.plist */; };
+		08A36BE49C73C43CCC459954884EDCBA /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 5B02ADBF2A20A938356B867289AAD56D /* template.html */; };
+		4A69C2822E56FC74D16FDC3F8BBF0EFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		797E1C2C502B59595BA546469CFFBFAB /* TBLCollectionCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = D918D0DB6ECE330226CE694DD074836B /* TBLCollectionCell.nib */; };
+		8CCAA61AB17F26E31705B48BA0AC49BA /* TBLTableCell.nib in Resources */ = {isa = PBXBuildFile; fileRef = ADB6E7B05F13B74FF969DFC5E707AE79 /* TBLTableCell.nib */; };
+		EE98EC95F4152BA0C748F9D7AABC7945 /* Pods-TaboolaSDKExampleSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 094CFA73436216CB6865427BE7BD8CF5 /* Pods-TaboolaSDKExampleSwift-dummy.m */; };
+		FDF9AC6DE407869AED82F614C5D9FC16 /* Pods-TaboolaSDKExampleSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 446072B755EA32EE1D8710417727EAC0 /* Pods-TaboolaSDKExampleSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5D4A6965B5319269891CD6E2C909A587 /* PBXContainerItemProxy */ = {
+		240FD451BCC0844BDBFD8396B103C02D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D60D3090E91A4BECA18C495F3EC8D4D3;
 			remoteInfo = "TaboolaSDK-TaboolaSDKResource";
 		};
-		DB845EDFEA6CA418FFE3E50807BD4298 /* PBXContainerItemProxy */ = {
+		C787EB769E091BFC6194E86AD2049DAB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -72,18 +72,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		84F91F171E61622379CE00CBCE24B627 /* Frameworks */ = {
+		183382F77DA84191F4F9FCF7237DB2A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A69C2822E56FC74D16FDC3F8BBF0EFB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		91D5D42446E27CD3D5787B4AB6CB73EC /* Frameworks */ = {
+		DD5EA8B89085E19A59B07E60B6D8FC99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				090C813B608CA91DA2601098D3FDD167 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,11 +204,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0B500709100316FEC092872D1E0BA606 /* Headers */ = {
+		E5CE816505B239C2EECD40C0DF91FDB3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5BDFCE9EC7A0D22157744DB8E3E112B /* Pods-TaboolaSDKExampleSwift-umbrella.h in Headers */,
+				FDF9AC6DE407869AED82F614C5D9FC16 /* Pods-TaboolaSDKExampleSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,17 +217,17 @@
 /* Begin PBXNativeTarget section */
 		4D5D0A61E86B62AC65BB667434B04CC1 /* Pods-TaboolaSDKExampleSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65C02DCD483D741632ACF1B7EC71CC8E /* Build configuration list for PBXNativeTarget "Pods-TaboolaSDKExampleSwift" */;
+			buildConfigurationList = 00E071FC06BF5A4E6224D5A9692F5758 /* Build configuration list for PBXNativeTarget "Pods-TaboolaSDKExampleSwift" */;
 			buildPhases = (
-				0B500709100316FEC092872D1E0BA606 /* Headers */,
-				3E610FCE5117811F3BDC45A15FA995CD /* Sources */,
-				91D5D42446E27CD3D5787B4AB6CB73EC /* Frameworks */,
-				A08ECAC4821BE1040215EC4592A75AEF /* Resources */,
+				E5CE816505B239C2EECD40C0DF91FDB3 /* Headers */,
+				0C5E054B4B4389699DF38B6046DBB18C /* Sources */,
+				183382F77DA84191F4F9FCF7237DB2A5 /* Frameworks */,
+				0F8982E6314D16433E03283CE0E71C2A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C7B0D8DA631887EADA4CFD2D741EB444 /* PBXTargetDependency */,
+				19AB4FBCDE802E8429455D93ADA4B228 /* PBXTargetDependency */,
 			);
 			name = "Pods-TaboolaSDKExampleSwift";
 			productName = "Pods-TaboolaSDKExampleSwift";
@@ -236,11 +236,11 @@
 		};
 		D60D3090E91A4BECA18C495F3EC8D4D3 /* TaboolaSDK-TaboolaSDKResource */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3877BDF6BFF1C1A98D7E122A8E73680F /* Build configuration list for PBXNativeTarget "TaboolaSDK-TaboolaSDKResource" */;
+			buildConfigurationList = 536C905A67420204A7AC5530A2593CF7 /* Build configuration list for PBXNativeTarget "TaboolaSDK-TaboolaSDKResource" */;
 			buildPhases = (
-				01C710586C8300B59A9A240879FC5938 /* Sources */,
-				84F91F171E61622379CE00CBCE24B627 /* Frameworks */,
-				7773DDAF62BFA3FD836760C4EF07B247 /* Resources */,
+				EF734C6688E0730767D0E5D839F29A19 /* Sources */,
+				DD5EA8B89085E19A59B07E60B6D8FC99 /* Frameworks */,
+				05B6EBB104B7EAE1F23590812B336BD3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -281,18 +281,18 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7773DDAF62BFA3FD836760C4EF07B247 /* Resources */ = {
+		05B6EBB104B7EAE1F23590812B336BD3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3CC667C65DB629853E6F60D50AA0F37 /* TaboolaSDKResource-Info.plist in Resources */,
-				E21059496E7F604EE3B5BDB82ED71099 /* TBLCollectionCell.nib in Resources */,
-				3CED1F7112F9E4E130E7BEC84613CD21 /* TBLTableCell.nib in Resources */,
-				DA10CCD9D2B8EB21CE31F3DBD75432D5 /* template.html in Resources */,
+				067DEDAA6A7F097F7CA5B558697CD6A6 /* TaboolaSDKResource-Info.plist in Resources */,
+				797E1C2C502B59595BA546469CFFBFAB /* TBLCollectionCell.nib in Resources */,
+				8CCAA61AB17F26E31705B48BA0AC49BA /* TBLTableCell.nib in Resources */,
+				08A36BE49C73C43CCC459954884EDCBA /* template.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A08ECAC4821BE1040215EC4592A75AEF /* Resources */ = {
+		0F8982E6314D16433E03283CE0E71C2A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,40 +302,95 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		01C710586C8300B59A9A240879FC5938 /* Sources */ = {
+		0C5E054B4B4389699DF38B6046DBB18C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE98EC95F4152BA0C748F9D7AABC7945 /* Pods-TaboolaSDKExampleSwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E610FCE5117811F3BDC45A15FA995CD /* Sources */ = {
+		EF734C6688E0730767D0E5D839F29A19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13648BBC7D1CFA27313A9B0BAE8FA7B4 /* Pods-TaboolaSDKExampleSwift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2076D5B54BCE83C188FF62E2D786C34F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "TaboolaSDK-TaboolaSDKResource";
-			target = D60D3090E91A4BECA18C495F3EC8D4D3 /* TaboolaSDK-TaboolaSDKResource */;
-			targetProxy = 5D4A6965B5319269891CD6E2C909A587 /* PBXContainerItemProxy */;
-		};
-		C7B0D8DA631887EADA4CFD2D741EB444 /* PBXTargetDependency */ = {
+		19AB4FBCDE802E8429455D93ADA4B228 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TaboolaSDK;
 			target = 7F6415DE1BA4E1F2CF2767393A451475 /* TaboolaSDK */;
-			targetProxy = DB845EDFEA6CA418FFE3E50807BD4298 /* PBXContainerItemProxy */;
+			targetProxy = C787EB769E091BFC6194E86AD2049DAB /* PBXContainerItemProxy */;
+		};
+		3CD5E297EFFEAD4E190FF5D98A9C3EF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "TaboolaSDK-TaboolaSDKResource";
+			target = D60D3090E91A4BECA18C495F3EC8D4D3 /* TaboolaSDK-TaboolaSDKResource */;
+			targetProxy = 240FD451BCC0844BDBFD8396B103C02D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		03050CC969B00CF9F723CD0228FEE774 /* Release */ = {
+		2704F2DABF64114D723E464AB2AD288B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6F3D8E933F6AA9AF44F5797C081CE8F /* TaboolaSDK.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TaboolaSDK";
+				IBSC_MODULE = TaboolaSDK;
+				INFOPLIST_FILE = "Target Support Files/TaboolaSDK/ResourceBundle-TaboolaSDKResource-TaboolaSDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = TaboolaSDKResource;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		4575C66BABE354128137B46878D67596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DC4EBD4D19E750D23427B2C29ECC1E0 /* Pods-TaboolaSDKExampleSwift.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TaboolaSDKExampleSwift/Pods-TaboolaSDKExampleSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TaboolaSDKExampleSwift/Pods-TaboolaSDKExampleSwift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8F47952C0BBE69DE8B00CE02911565FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFE31848C30181105DECE557896A9E30 /* Pods-TaboolaSDKExampleSwift.release.xcconfig */;
 			buildSettings = {
@@ -373,40 +428,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		678AEE9B272C4EF406C54041C804775A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6CE299D5B95D6940625B7B61EC96752 /* TaboolaSDK.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TaboolaSDK";
-				IBSC_MODULE = TaboolaSDK;
-				INFOPLIST_FILE = "Target Support Files/TaboolaSDK/ResourceBundle-TaboolaSDKResource-TaboolaSDK-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = TaboolaSDKResource;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		92AF5964990D0FBC545E1DA99D70AA5C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6F3D8E933F6AA9AF44F5797C081CE8F /* TaboolaSDK.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TaboolaSDK";
-				IBSC_MODULE = TaboolaSDK;
-				INFOPLIST_FILE = "Target Support Files/TaboolaSDK/ResourceBundle-TaboolaSDKResource-TaboolaSDK-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = TaboolaSDKResource;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
 		};
 		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -472,38 +493,22 @@
 			};
 			name = Debug;
 		};
-		D338FF847E4A264F918D768BE6FFAC92 /* Release */ = {
+		D84000E0C2860D2F011444C62AA4FDE9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6CE299D5B95D6940625B7B61EC96752 /* TaboolaSDK.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TaboolaSDK";
+				IBSC_MODULE = TaboolaSDK;
+				INFOPLIST_FILE = "Target Support Files/TaboolaSDK/ResourceBundle-TaboolaSDKResource-TaboolaSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				PRODUCT_NAME = TaboolaSDKResource;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
-		};
-		E71F93AA123057859D67FDD6C6AE580D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6F3D8E933F6AA9AF44F5797C081CE8F /* TaboolaSDK.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -565,52 +570,47 @@
 			};
 			name = Release;
 		};
-		F14741536B61789854FFF12502DBEE16 /* Debug */ = {
+		F785E2359711BEF0485B45348732EC24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DC4EBD4D19E750D23427B2C29ECC1E0 /* Pods-TaboolaSDKExampleSwift.debug.xcconfig */;
+			baseConfigurationReference = B6CE299D5B95D6940625B7B61EC96752 /* TaboolaSDK.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TaboolaSDKExampleSwift/Pods-TaboolaSDKExampleSwift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TaboolaSDKExampleSwift/Pods-TaboolaSDKExampleSwift.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB81935945F31F30018FA046348F0F98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6F3D8E933F6AA9AF44F5797C081CE8F /* TaboolaSDK.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3877BDF6BFF1C1A98D7E122A8E73680F /* Build configuration list for PBXNativeTarget "TaboolaSDK-TaboolaSDKResource" */ = {
+		00E071FC06BF5A4E6224D5A9692F5758 /* Build configuration list for PBXNativeTarget "Pods-TaboolaSDKExampleSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				92AF5964990D0FBC545E1DA99D70AA5C /* Debug */,
-				678AEE9B272C4EF406C54041C804775A /* Release */,
+				4575C66BABE354128137B46878D67596 /* Debug */,
+				8F47952C0BBE69DE8B00CE02911565FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -624,20 +624,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65C02DCD483D741632ACF1B7EC71CC8E /* Build configuration list for PBXNativeTarget "Pods-TaboolaSDKExampleSwift" */ = {
+		536C905A67420204A7AC5530A2593CF7 /* Build configuration list for PBXNativeTarget "TaboolaSDK-TaboolaSDKResource" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F14741536B61789854FFF12502DBEE16 /* Debug */,
-				03050CC969B00CF9F723CD0228FEE774 /* Release */,
+				2704F2DABF64114D723E464AB2AD288B /* Debug */,
+				D84000E0C2860D2F011444C62AA4FDE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97851FE8E21F3D80BB3A94C6DEA03D47 /* Build configuration list for PBXAggregateTarget "TaboolaSDK" */ = {
+		95C14D70C28A84D53ACDF7B9748C5C2F /* Build configuration list for PBXAggregateTarget "TaboolaSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E71F93AA123057859D67FDD6C6AE580D /* Debug */,
-				D338FF847E4A264F918D768BE6FFAC92 /* Release */,
+				FB81935945F31F30018FA046348F0F98 /* Debug */,
+				F785E2359711BEF0485B45348732EC24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

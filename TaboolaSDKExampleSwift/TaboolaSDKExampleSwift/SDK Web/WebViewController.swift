@@ -34,7 +34,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, TBLWebDelegate{
         webView.loadHTMLString(appHtml, baseURL: URL(string: "https://cdn.taboola.com/mobile-sdk/init/"))
     }
     
-    func webView(_ webView: UIView!, didLoadPlacementNamed placementName: String!, withHeight height: CGFloat) {
+    func webView(_ webView: WKWebView!, didLoadPlacementNamed placementName: String!, withHeight height: CGFloat) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
     }
     

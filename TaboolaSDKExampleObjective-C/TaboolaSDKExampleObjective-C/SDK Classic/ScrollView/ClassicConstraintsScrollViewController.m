@@ -79,9 +79,6 @@
 }
 
 - (BOOL)onItemClick:(NSString *)placementName withItemId:(NSString *)itemId withClickUrl:(NSString *)clickUrl isOrganic:(BOOL)organic {
-    if (!organic) {
-        return NO;
-    }
     return YES;
 }
 

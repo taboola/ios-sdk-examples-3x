@@ -94,7 +94,7 @@
 
 #pragma mark - TBLClassicPageDelegate
 
--(void)taboolaView:(UIView *)taboolaView didLoadOrChangeHeightOfPlacementNamed:(NSString *)placementName withHeight:(CGFloat)height {
+-(void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height {
     NSLog(@"%@", placementName);
     
     if ([placementName containsString:widgetPlacement]) {
@@ -111,9 +111,6 @@
 }
 
 - (BOOL)onItemClick:(NSString *)placementName withItemId:(NSString *)itemId withClickUrl:(NSString *)clickUrl isOrganic:(BOOL)organic {
-    if (!organic) {
-        return NO;
-    }
     return YES;
 }
 

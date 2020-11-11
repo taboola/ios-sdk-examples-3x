@@ -11,7 +11,7 @@ import TaboolaSDK
 
 class ClassicFrameScrollViewController: UIViewController {
     
-    var scrollView: UIScrollView = UIScrollView()
+    var scrollView: UIScrollView!
     
     var topText: UILabel = UILabel()
     var midText: UILabel = UILabel()
@@ -33,6 +33,7 @@ class ClassicFrameScrollViewController: UIViewController {
         
         topText = UILabel(frame: screenSize)
         textCreator(labeToEdit: topText)
+        
         scrollView.addSubview(topText)
         
         // Creating the Taboola page object

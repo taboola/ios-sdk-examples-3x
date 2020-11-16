@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,19 @@
 		72D70006244DD0B0004C967C /* ClassicTableViewManagedByTaboolaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D70005244DD0B0004C967C /* ClassicTableViewManagedByTaboolaController.swift */; };
 		72D7000A24503D0D004C967C /* ClassicFrameScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D7000924503D0D004C967C /* ClassicFrameScrollViewController.swift */; };
 		91BA97C731448D934E9E2A2A /* Pods_TaboolaSDKExampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E3DFE1B76160DCA44AE917 /* Pods_TaboolaSDKExampleSwift.framework */; };
+		DB54648525626FE700E30C91 /* SwiftUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54647725626FE700E30C91 /* SwiftUIViews.swift */; };
+		DB54648625626FE700E30C91 /* LazyVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54647825626FE700E30C91 /* LazyVStackView.swift */; };
+		DB54648725626FE700E30C91 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54647925626FE700E30C91 /* ListView.swift */; };
+		DB54648825626FE700E30C91 /* TabViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54647A25626FE700E30C91 /* TabViewView.swift */; };
+		DB54648925626FE700E30C91 /* LazyVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54647B25626FE700E30C91 /* LazyVGridView.swift */; };
+		DB54648A25626FE700E30C91 /* LoremText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54647C25626FE700E30C91 /* LoremText.swift */; };
+		DB54648B25626FE700E30C91 /* OpenSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54647E25626FE700E30C91 /* OpenSwiftUI.swift */; };
+		DB54648C25626FE700E30C91 /* ScrollViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54647F25626FE700E30C91 /* ScrollViewView.swift */; };
+		DB54648D25626FE700E30C91 /* VStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54648025626FE700E30C91 /* VStackView.swift */; };
+		DB54648E25626FE700E30C91 /* TBLClassicUnitSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54648225626FE700E30C91 /* TBLClassicUnitSwiftUI.swift */; };
+		DB54648F25626FE700E30C91 /* TBLClassicPageSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54648325626FE700E30C91 /* TBLClassicPageSwift.swift */; };
+		DB54649025626FE700E30C91 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54648425626FE700E30C91 /* PageView.swift */; };
+		DB546494256272CF00E30C91 /* ClassicMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB546493256272CF00E30C91 /* ClassicMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +61,20 @@
 		C0AF67F2E6E0550FEC48A220 /* Pods-TaboolaSDKExampleV3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaboolaSDKExampleV3.debug.xcconfig"; path = "Target Support Files/Pods-TaboolaSDKExampleV3/Pods-TaboolaSDKExampleV3.debug.xcconfig"; sourceTree = "<group>"; };
 		CD964DAFFF94D17B2ACDB84C /* Pods-TaboolaSDKExampleV3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaboolaSDKExampleV3.release.xcconfig"; path = "Target Support Files/Pods-TaboolaSDKExampleV3/Pods-TaboolaSDKExampleV3.release.xcconfig"; sourceTree = "<group>"; };
 		D4BB3D3BE6D8592311A73F29 /* Pods-TaboolaSDKExampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaboolaSDKExampleSwift.debug.xcconfig"; path = "Target Support Files/Pods-TaboolaSDKExampleSwift/Pods-TaboolaSDKExampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		DB54647725626FE700E30C91 /* SwiftUIViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIViews.swift; sourceTree = "<group>"; };
+		DB54647825626FE700E30C91 /* LazyVStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyVStackView.swift; sourceTree = "<group>"; };
+		DB54647925626FE700E30C91 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		DB54647A25626FE700E30C91 /* TabViewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewView.swift; sourceTree = "<group>"; };
+		DB54647B25626FE700E30C91 /* LazyVGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyVGridView.swift; sourceTree = "<group>"; };
+		DB54647C25626FE700E30C91 /* LoremText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremText.swift; sourceTree = "<group>"; };
+		DB54647D25626FE700E30C91 /* QAApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QAApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB54647E25626FE700E30C91 /* OpenSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSwiftUI.swift; sourceTree = "<group>"; };
+		DB54647F25626FE700E30C91 /* ScrollViewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewView.swift; sourceTree = "<group>"; };
+		DB54648025626FE700E30C91 /* VStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStackView.swift; sourceTree = "<group>"; };
+		DB54648225626FE700E30C91 /* TBLClassicUnitSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBLClassicUnitSwiftUI.swift; sourceTree = "<group>"; };
+		DB54648325626FE700E30C91 /* TBLClassicPageSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBLClassicPageSwift.swift; sourceTree = "<group>"; };
+		DB54648425626FE700E30C91 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		DB546493256272CF00E30C91 /* ClassicMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +138,8 @@
 				7271C6FA24695D250003204A /* CollectionView */,
 				7271C6FB246966100003204A /* TableView */,
 				7271C6FC246966220003204A /* ScrollView */,
+				DB54647625626FE700E30C91 /* SwiftUI */,
+				DB546493256272CF00E30C91 /* ClassicMainViewController.swift */,
 			);
 			path = "SDK Classic";
 			sourceTree = "<group>";
@@ -157,6 +186,34 @@
 				72BB672924BC8B2800D5A9D4 /* ClassicConstraintsScrollViewController.swift */,
 			);
 			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		DB54647625626FE700E30C91 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				DB54647725626FE700E30C91 /* SwiftUIViews.swift */,
+				DB54647825626FE700E30C91 /* LazyVStackView.swift */,
+				DB54647925626FE700E30C91 /* ListView.swift */,
+				DB54647A25626FE700E30C91 /* TabViewView.swift */,
+				DB54647B25626FE700E30C91 /* LazyVGridView.swift */,
+				DB54647C25626FE700E30C91 /* LoremText.swift */,
+				DB54647D25626FE700E30C91 /* QAApp-Bridging-Header.h */,
+				DB54647E25626FE700E30C91 /* OpenSwiftUI.swift */,
+				DB54647F25626FE700E30C91 /* ScrollViewView.swift */,
+				DB54648025626FE700E30C91 /* VStackView.swift */,
+				DB54648125626FE700E30C91 /* TaboolaViews */,
+				DB54648425626FE700E30C91 /* PageView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		DB54648125626FE700E30C91 /* TaboolaViews */ = {
+			isa = PBXGroup;
+			children = (
+				DB54648225626FE700E30C91 /* TBLClassicUnitSwiftUI.swift */,
+				DB54648325626FE700E30C91 /* TBLClassicPageSwift.swift */,
+			);
+			path = TaboolaViews;
 			sourceTree = "<group>";
 		};
 		F2A923B628886A3A56F7FF2B /* Pods */ = {
@@ -305,15 +362,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				722CA6F8241792840022043F /* MainViewController.swift in Sources */,
+				DB54648C25626FE700E30C91 /* ScrollViewView.swift in Sources */,
+				DB54649025626FE700E30C91 /* PageView.swift in Sources */,
 				72D7000A24503D0D004C967C /* ClassicFrameScrollViewController.swift in Sources */,
 				72BB672A24BC8B2800D5A9D4 /* ClassicConstraintsScrollViewController.swift in Sources */,
 				72D70006244DD0B0004C967C /* ClassicTableViewManagedByTaboolaController.swift in Sources */,
 				725461B62427A4D500660672 /* WebViewController.swift in Sources */,
+				DB54648925626FE700E30C91 /* LazyVGridView.swift in Sources */,
+				DB546494256272CF00E30C91 /* ClassicMainViewController.swift in Sources */,
 				7271C700246C01AD0003204A /* ClassicTableViewManagedByPublisher.swift in Sources */,
+				DB54648F25626FE700E30C91 /* TBLClassicPageSwift.swift in Sources */,
+				DB54648625626FE700E30C91 /* LazyVStackView.swift in Sources */,
+				DB54648A25626FE700E30C91 /* LoremText.swift in Sources */,
 				7256529124A4DA08007C07EB /* Constants.swift in Sources */,
+				DB54648825626FE700E30C91 /* TabViewView.swift in Sources */,
 				725461BB2427BB4200660672 /* NativeViewController.swift in Sources */,
 				7271C6FE24697B930003204A /* ClassicCollectionViewManagedByPublisherController.swift in Sources */,
+				DB54648B25626FE700E30C91 /* OpenSwiftUI.swift in Sources */,
+				DB54648725626FE700E30C91 /* ListView.swift in Sources */,
+				DB54648E25626FE700E30C91 /* TBLClassicUnitSwiftUI.swift in Sources */,
 				722CA6F4241792840022043F /* AppDelegate.swift in Sources */,
+				DB54648525626FE700E30C91 /* SwiftUIViews.swift in Sources */,
+				DB54648D25626FE700E30C91 /* VStackView.swift in Sources */,
 				725461B32427A16800660672 /* ClassicCollectionViewManagedByTaboolaController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

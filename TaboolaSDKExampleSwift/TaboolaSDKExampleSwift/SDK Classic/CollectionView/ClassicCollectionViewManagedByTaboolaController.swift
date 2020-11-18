@@ -26,6 +26,7 @@ class ClassicCollectionViewManagedByTaboolaController: UIViewController {
     
     func taboolaInit(){
         classicPage = TBLClassicPage.init(pageType: "article", pageUrl: "http://www.example.com", delegate: self, scrollView: self.collectionView)
+        classicPage?.pageExtraProperties = ["key":"true"]
         
         taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Below Article", mode: "alternating-widget-without-video-1x4")
         
@@ -57,7 +58,7 @@ extension ClassicCollectionViewManagedByTaboolaController: UICollectionViewDataS
         switch indexPath.section {
         case Constants.taboolaWidgetSection:
             if let taboolaWidgetPlacement = taboolaWidgetPlacement {
-                let cell = taboolaWidgetPlacement.collectionView(collectionView, cellForItemAt: indexPath, withBackground: nil)
+                let cell = taboolaWidgetPlacement.collectionView(collectionView, cellForItemAt: indexPath, withBackground: UIColor.red)
                 return cell
             }
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomCell", for: indexPath)
@@ -121,9 +122,6 @@ extension ClassicCollectionViewManagedByTaboolaController: TBLClassicPageDelegat
     }
     
     func onItemClick(_ placementName: String!, withItemId itemId: String!, withClickUrl clickUrl: String!, isOrganic organic: Bool) -> Bool {
-        if (!organic) {
-            return false;
-        }
-        return true;
+        return false;
     }
 }

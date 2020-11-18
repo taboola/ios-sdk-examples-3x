@@ -422,7 +422,7 @@
         <!--Classic Main View Classic Layout Selection Controller-->
         <scene sceneID="LG6-b2-zeo">
             <objects>
-                <viewController id="xfn-bC-Vaq" userLabel="Classic Main View Classic Layout Selection Controller" customClass="ClassicMainViewController" customModule="TaboolaSDKExampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xfn-bC-Vaq" userLabel="Classic Main View Classic Layout Selection Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0p-Xp-JQH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -434,7 +434,7 @@
                                 <rect key="frame" x="50" y="371" width="314" height="441"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXm-mp-xPZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="102.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="140.33333333333334"/>
                                         <color key="backgroundColor" red="0.084904335440000006" green="0.29671934249999998" blue="0.57257765530000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                         <state key="normal" title="CollectionView">
@@ -451,7 +451,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Uy-xR-5d2">
-                                        <rect key="frame" x="0.0" y="112.66666666666669" width="314" height="103"/>
+                                        <rect key="frame" x="0.0" y="150.33333333333337" width="314" height="140.33333333333337"/>
                                         <color key="backgroundColor" red="0.084904335440000006" green="0.29671934249999998" blue="0.57257765530000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <state key="normal" title="TableView">
@@ -468,7 +468,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-MC-jmi">
-                                        <rect key="frame" x="0.0" y="225.6666666666666" width="314" height="102.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="300.66666666666663" width="314" height="140.33333333333337"/>
                                         <color key="backgroundColor" red="0.084904335440000006" green="0.29671934249999998" blue="0.57257765530000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <state key="normal" title="ScrollView">
@@ -482,23 +482,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="SBu-00-KdC" kind="show" id="ABJ-Ke-dvN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB3-ji-FUm">
-                                        <rect key="frame" x="0.0" y="338.33333333333337" width="314" height="102.66666666666669"/>
-                                        <color key="backgroundColor" red="0.084904335440000006" green="0.29671934249999998" blue="0.57257765530000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                        <state key="normal" title="SwiftUI">
-                                            <color key="titleColor" systemColor="groupTableViewBackgroundColor"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="25"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.makeBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="openSwiftUI:" destination="xfn-bC-Vaq" eventType="touchUpInside" id="U7x-kS-tvx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -957,9 +940,6 @@
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

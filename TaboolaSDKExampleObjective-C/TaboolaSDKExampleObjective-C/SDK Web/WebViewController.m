@@ -51,9 +51,8 @@
 }
 
 - (BOOL)onItemClick:(NSString *)placementName withItemId:(NSString *)itemId withClickUrl:(NSString *)clickUrl isOrganic:(BOOL)organic {
-    if (!organic) {
-        return NO;
-    }
+    // Return 'YES' for Taboola SDK to handle the click event (default behavior).
+    // Return 'NO' to handle the click event yourself. (Applicable for organic content only.)
     return YES;
 }
 

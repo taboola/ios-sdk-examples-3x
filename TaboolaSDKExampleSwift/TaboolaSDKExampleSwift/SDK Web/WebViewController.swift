@@ -34,18 +34,20 @@ class WebViewController: UIViewController, WKNavigationDelegate, TBLWebDelegate{
         webView.loadHTMLString(appHtml, baseURL: URL(string: "https://cdn.taboola.com/mobile-sdk/init/"))
     }
     
+    // TBLWebDelegate:
+    
     func webView(_ webView: WKWebView!, didLoadPlacementNamed placementName: String!, withHeight height: CGFloat) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
     }
     
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print(error as Any)
+    func webView(_ webView: WKWebView!, didFailToLoadPlacementNamed placementName: String!, withErrorMessage error: String!) {
+        print("Placement name: \(String(describing: placementName)) failed to load!)")
+        print("Error: \(String(describing: error))")
     }
     
     func onItemClick(_ placementName: String!, withItemId itemId: String!, withClickUrl clickUrl: String!, isOrganic organic: Bool) -> Bool {
-        if (!organic) {
-            return false;
-        }
+        // Return 'true' for Taboola SDK to handle the click event (default behavior).
+        // Return 'false' to handle the click event yourself. (Applicable for organic content only.)
         return true;
     }
 }

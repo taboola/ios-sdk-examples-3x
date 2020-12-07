@@ -111,7 +111,7 @@ extension ClassicTableViewManagedByPublisherController: UITableViewDataSource, U
 }
 
 extension ClassicTableViewManagedByPublisherController: TBLClassicPageDelegate {
-    func taboolaView(_ taboolaView: UIView!, didLoadOrResizePlacement placementName: String!, withHeight height: CGFloat, placementType: PlacementType) {
+    func classicUnit(_ classicUnit: UIView!, didLoadOrResizePlacementName placementName: String!, height: CGFloat, placementType: PlacementType) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
         if placementName == Constants.widgetPlacement{
             taboolaWidgetPlacement?.frame = CGRect(x: 0,y: 0,width: self.view.frame.size.width,height: taboolaWidgetPlacement?.placementHeight ?? 200)
@@ -123,14 +123,11 @@ extension ClassicTableViewManagedByPublisherController: TBLClassicPageDelegate {
         self.tableView.endUpdates()
     }
     
-    func taboolaView(_ taboolaView: UIView!, didFailToLoadPlacementNamed placementName: String!, withErrorMessage error: String!) {
+    func classicUnit(_ classicUnit: UIView!, didFailToLoadPlacementName placementName: String!, errorMessage error: String!) {
         print(error as Any)
     }
     
-    func onItemClick(_ placementName: String!, withItemId itemId: String!, withClickUrl clickUrl: String!, isOrganic organic: Bool) -> Bool {
-        if (!organic) {
-            return false;
-        }
+    func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool) -> Bool {
         return true;
     }
 }

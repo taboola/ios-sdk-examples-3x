@@ -9,7 +9,7 @@
 import Foundation
 import TaboolaSDK
 
-class WebViewController: UIViewController, WKNavigationDelegate, TBLWebDelegate{
+class WebViewController: UIViewController, WKNavigationDelegate, TBLWebPageDelegate{
     @IBOutlet weak var webViewContainer: UIView!
     var webView = WKWebView()
     
@@ -40,16 +40,16 @@ class WebViewController: UIViewController, WKNavigationDelegate, TBLWebDelegate{
     
     // TBLWebDelegate:
     
-    func webView(_ webView: WKWebView!, didLoadPlacementNamed placementName: String!, withHeight height: CGFloat) {
+    func webView(_ webView: WKWebView!, didLoadPlacementName placementName: String!, height: CGFloat) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
     }
     
-    func webView(_ webView: WKWebView!, didFailToLoadPlacementNamed placementName: String!, withErrorMessage error: String!) {
+    func webView(_ webView: WKWebView!, didFailToLoadPlacementName placementName: String!, errorMessage error: String!) {
         print("Placement name: \(String(describing: placementName)) failed to load!)")
         print("Error: \(String(describing: error))")
     }
     
-    func onItemClick(_ placementName: String!, withItemId itemId: String!, withClickUrl clickUrl: String!, isOrganic organic: Bool) -> Bool {
+    func webView(_ webView: WKWebView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool) -> Bool {
         // Return 'true' for Taboola SDK to handle the click event (default behavior).
         // Return 'false' to handle the click event yourself. (Applicable for organic content only.)
         return true;

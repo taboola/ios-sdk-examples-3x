@@ -12,6 +12,10 @@ import TaboolaSDK
 class WebViewController: UIViewController, WKNavigationDelegate, TBLWebDelegate{
     @IBOutlet weak var webViewContainer: UIView!
     var webView = WKWebView()
+    
+    // The TBLWebPage object that will contain the Taboola content fetched via JS
+    var webPage: TBLWebPage?
+    var webUnit: TBLWebUnit?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +23,8 @@ class WebViewController: UIViewController, WKNavigationDelegate, TBLWebDelegate{
         webView.frame = view.frame
         webViewContainer.addSubview(webView)
         
-        let jsPage =  TBLWebPage.init(delegate: self)
-        jsPage.createUnit(with: webView)
+        webPage =  TBLWebPage.init(delegate: self)
+        webUnit = webPage?.createUnit(with: webView)
                 
         try? loadExamplePage()
     }

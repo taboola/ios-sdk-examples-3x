@@ -11,7 +11,7 @@
 #import <WebKit/WebKit.h>
 
 
-@interface WebViewController () <WKNavigationDelegate, TBLWebDelegate>
+@interface WebViewController () <WKNavigationDelegate, TBLWebPageDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *webViewContainer;
 

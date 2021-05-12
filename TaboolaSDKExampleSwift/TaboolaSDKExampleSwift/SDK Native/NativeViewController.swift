@@ -30,7 +30,7 @@ class NativeViewController: UIViewController {
         
         let taboolaUnit = nativePage.createUnit(withPlacement: "Below Article", numberOfItems: 1)
                 
-        taboolaUnit.fetch(onSuccess: {[weak self] (response) in
+        taboolaUnit.fetchContent(onSuccess: {[weak self] (response) in
             if let item = response?.items.firstObject as? TBLNativeItem{
                 self?.taboolaItem = item
                 self?.updateTaboolaUI()

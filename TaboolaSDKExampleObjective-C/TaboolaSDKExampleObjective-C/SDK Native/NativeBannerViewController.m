@@ -37,7 +37,7 @@
     
     TBLNativeUnit *taboolaUnit = [nativePage createUnitWithPlacement:@"Below Article" numberOfItems:1];
     
-    [taboolaUnit fetchOnSuccess:^(TBLRecommendationResponse *response) {
+    [taboolaUnit fetchContentOnSuccess:^(TBLRecommendationResponse *response) {
         if (response.items.count > 0) {
             TBLNativeItem *item1 = response.items[0];
             if (item1 != nil) {

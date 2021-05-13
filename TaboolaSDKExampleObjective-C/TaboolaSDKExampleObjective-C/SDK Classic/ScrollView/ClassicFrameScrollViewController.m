@@ -58,7 +58,7 @@
 
 - (void)dealloc {
     NSLog(@"Dealloc");
-    [_taboolaFeedPlacement reset];
+    [self.classicPage reset];
 }
 
 #pragma mark - TBLClassicPageDelegate

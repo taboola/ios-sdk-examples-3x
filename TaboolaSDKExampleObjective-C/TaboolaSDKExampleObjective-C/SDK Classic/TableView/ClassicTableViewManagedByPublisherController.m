@@ -88,8 +88,7 @@
 }
 
 -(void)dealloc {
-    [_taboolaWidgetPlacement reset];
-    [_taboolaFeedPlacement reset];
+    [self.classicPage reset];
 }
 
 #pragma mark - TBLClassicPageDelegate

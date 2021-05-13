@@ -86,12 +86,7 @@ class ClassicFrameScrollViewController: UIViewController {
     }
     
     deinit{
-        if let taboolaWidgetPlacement = taboolaWidgetPlacement{
-            taboolaWidgetPlacement.reset()
-        }
-        if let taboolaFeedPlacement = taboolaFeedPlacement{
-            taboolaFeedPlacement.reset()
-        }
+        classicPage?.reset()
     }
 }
 

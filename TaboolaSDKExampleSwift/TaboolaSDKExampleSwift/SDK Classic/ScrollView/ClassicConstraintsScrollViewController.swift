@@ -66,10 +66,6 @@ class ClassicConstraintsScrollViewController: UIViewController {
             taboolaFeedPlacement.trailingAnchor.constraint(equalTo: bottomFeed.trailingAnchor, constant: 0).isActive = true
         }
     }
-    
-    deinit{
-        classicPage?.reset()
-    }
 }
 
 extension ClassicConstraintsScrollViewController: TBLClassicPageDelegate {

@@ -39,10 +39,6 @@ class ClassicTableViewManagedByPublisherController: UIViewController {
             taboolaFeedPlacement.fetchContent()
         }
     }
-    
-    deinit{
-        classicPage?.reset()
-    }
 }
 
 extension ClassicTableViewManagedByPublisherController: UITableViewDataSource, UITableViewDelegate{

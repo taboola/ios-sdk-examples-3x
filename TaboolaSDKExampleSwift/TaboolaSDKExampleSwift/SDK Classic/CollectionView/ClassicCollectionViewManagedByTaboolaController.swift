@@ -40,10 +40,6 @@ class ClassicCollectionViewManagedByTaboolaController: UIViewController {
             taboolaFeedPlacement.fetchContent()
         }
     }
-    
-    deinit {
-        classicPage?.reset()
-    }
 }
 
 extension ClassicCollectionViewManagedByTaboolaController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

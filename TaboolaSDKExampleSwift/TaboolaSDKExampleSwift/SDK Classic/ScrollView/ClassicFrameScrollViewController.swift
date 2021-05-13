@@ -84,10 +84,6 @@ class ClassicFrameScrollViewController: UIViewController {
         textCreator(labeToEdit: midText)
         scrollView.addSubview(midText)
     }
-    
-    deinit{
-        classicPage?.reset()
-    }
 }
 
 extension ClassicFrameScrollViewController: TBLClassicPageDelegate {

@@ -21,10 +21,7 @@ class ClassicCollectionViewManagedByTaboolaController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        taboolaInit()
-    }
-    
-    func taboolaInit(){
+               
         classicPage = TBLClassicPage.init(pageType: "article", pageUrl: "http://www.example.com", delegate: self, scrollView: self.collectionView)
         classicPage?.pageExtraProperties = ["key":"true"]
         
@@ -40,6 +37,8 @@ class ClassicCollectionViewManagedByTaboolaController: UIViewController {
             taboolaFeedPlacement.fetchContent()
         }
     }
+   
+
 }
 
 extension ClassicCollectionViewManagedByTaboolaController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

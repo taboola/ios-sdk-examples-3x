@@ -14,18 +14,16 @@ class ClassicCollectionViewManagedByPublisherController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     // TBLClassicPage holds Taboola Widgets/Feed for a specific view
+    
     var classicPage: TBLClassicPage?
+    
     // TBLClassicUnit object represnting Widget/Feed
     var taboolaWidgetPlacement: TBLClassicUnit?
     var taboolaFeedPlacement: TBLClassicUnit?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        taboolaInit()
-    }
-    
-    func taboolaInit(){
-        
+ 
         classicPage = TBLClassicPage.init(pageType: "article", pageUrl: "http://www.example.com", delegate: self, scrollView: self.collectionView)
         
         taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Below Article", mode: "alternating-widget-without-video-1x4")
@@ -39,7 +37,9 @@ class ClassicCollectionViewManagedByPublisherController: UIViewController {
         if let taboolaFeedPlacement = taboolaFeedPlacement{
             taboolaFeedPlacement.fetchContent()
         }
+        
     }
+  
 }
 
 extension ClassicCollectionViewManagedByPublisherController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

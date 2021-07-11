@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TBLWebDelegate.h"
+#import "TBLWebPageDelegate.h"
 #import <WebKit/WebKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -19,18 +19,8 @@ TBLWebUnit is the first object to initialize, and is being used to fetch Taboola
 
 /*!
  @discussion After initializing TBLWebUnit, this method should be called to actually fetch the recommendations
- 
- @param webview The current webview to presenting the articles in
 */
-- (void)fetchContent:(WKWebView *)webview;
-
-/**
-Refreshes the recommendations.
- 
-*/
-- (void)refreshContent;
-
-
+- (void)fetchContent;
 
 @end
 

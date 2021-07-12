@@ -19,13 +19,13 @@ class NativeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         itemsArray = NSMutableArray()
-        self.collectionView.register(UINib(nibName: "NativeViewControllerCell", bundle: nil), forCellWithReuseIdentifier: "NativeViewControllerCell")
+        self.collectionView.register(UINib(nibName: Constants.nativeCell, bundle: nil), forCellWithReuseIdentifier: Constants.nativeCell)
         taboolaInit()
     }
     
     func taboolaInit() {
-        nativePage =  TBLNativePage.init(delegate: self, sourceType: SourceTypeText, pageUrl: "http://blog.taboola.com")
-        taboolaUnit = nativePage?.createUnit(withPlacement: "Below Article", numberOfItems: 1)
+        nativePage =  TBLNativePage.init(delegate: self, sourceType: SourceTypeText, pageUrl: Constants.pageUrl)
+        taboolaUnit = nativePage?.createUnit(withPlacement: Constants.widgetMode_1x4, numberOfItems: 5)
                 
         taboolaUnit?.fetchContent(onSuccess: {[weak self] (response) in
             self?.itemsArray = response?.items
@@ -36,44 +36,64 @@ class NativeViewController: UIViewController {
     }
     
     func fetchNextPage() {
+        weak var weakSelf = self
         taboolaUnit?.fetchContent(onSuccess: { (response) in
             if let response = response {
-                guard let newItems = response.items else { return }
-                self.collectionView.performBatchUpdates({
-                    guard let resultsSize = self.itemsArray?.count else { return }
-                    self.itemsArray?.add(newItems)
+                guard let newItems = response.items else {
+                    print("An error occured with response.items")
+                    return
+                }
+                // call performBatchUpdates in order to insert the new items to the collection's data
+                weakSelf?.collectionView.performBatchUpdates({
+                    guard let resultsSize = weakSelf?.itemsArray?.count else { return }
+                    weakSelf?.itemsArray?.addObjects(from: newItems as [AnyObject])
                     let arrayWithIndexPaths = NSMutableArray()
-                    for i in 0...(resultsSize + newItems.count) {
+                    for i in resultsSize..<(resultsSize + newItems.count) {
                         arrayWithIndexPaths.add(NSIndexPath(row: i, section: 0))
                     }
-                    self.collectionView.insertItems(at: arrayWithIndexPaths as! [IndexPath])
+                    weakSelf?.collectionView.insertItems(at: arrayWithIndexPaths as! [IndexPath])
                 }, completion: nil)
             }
         }, onFailure: { (error) in
-            
+            print(error.debugDescription)
         })
     }
 }
 
-extension NativeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension NativeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Constants.totalSectionsNative
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let itemsArray = itemsArray else { return 0 }
+        guard let itemsArray = itemsArray else {
+            print("An error occured with itemsArray")
+            return 0
+        }
         return itemsArray.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var width = UIScreen.main.bounds.size.width
+        if let interfaceOrientation = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.windowScene?.interfaceOrientation {
+            if interfaceOrientation == .landscapeLeft || interfaceOrientation == .landscapeRight {
+                width = UIScreen.main.bounds.size.height
+            }
+        }
+        return CGSize(width: width, height: width)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NativeCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.nativeCell, for: indexPath)
         if let cell = cell as? NativeViewControllerCell {
             cell.attributionButton.addTarget(self, action: #selector(clickedTaboolaAttribution), for: .touchDown)
-            guard let itemsArray = itemsArray else { return cell }
+            guard let itemsArray = itemsArray else { return UICollectionViewCell() }
             if let item = itemsArray[indexPath.row] as? TBLNativeItem {
+                // try to fetch image from dictionary. else, use TBItem for a default
                 if let imageUrl = item.extraDataDictionary()["imageUrl"] as? NSString {
                     DispatchQueue.global(qos: .background).async {
-                        guard let data = NSData.init(contentsOf: NSURL(string: imageUrl as String)! as URL) else { return }
+                        guard let url = NSURL(string: imageUrl as String) as URL?,
+                              let data = NSData.init(contentsOf: url) else { return }
                         DispatchQueue.main.async {
                             cell.imageView.image = UIImage(data: data as Data)
                         }
@@ -90,22 +110,31 @@ extension NativeViewController: UICollectionViewDelegate, UICollectionViewDataSo
                     cell.imageView.isUserInteractionEnabled = false
                 }
                 
+                // set other cell elements
                 item.initTitleView(cell.titleLabel)
                 item.initBrandingView(cell.brandingLabel)
             }
+            return cell
         }
-        return cell
+        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let itemsArray = itemsArray else { return }
+        guard let itemsArray = itemsArray else {
+            print("An error occured with itemsArray")
+            return
+        }
+        // when reach to the end of collectionView fetch more items
         if indexPath.row == itemsArray.count - 1 {
             self.fetchNextPage()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let itemsArray = itemsArray else { return }
+        guard let itemsArray = itemsArray else {
+            print("An error occured with itemsArray")
+            return
+        }
         if let item = itemsArray[indexPath.row] as? TBLNativeItem {
             item.handleClickEvent()
         }
@@ -122,10 +151,10 @@ extension NativeViewController: TBLNativePageDelegate {
         }
     
     func taboolaView(_ taboolaView: UIView!, didFailToLoadPlacementNamed placementName: String!, withErrorMessage error: String!) {
-        print(error as Any)
+        print(error.debugDescription)
     }
     
     func onItemClick(_ placementName: String, withItemId itemId: String, withClickUrl clickUrl: String, isOrganic organic: Bool, customData: String) -> Bool {
-        true
+        return true
     }
 }

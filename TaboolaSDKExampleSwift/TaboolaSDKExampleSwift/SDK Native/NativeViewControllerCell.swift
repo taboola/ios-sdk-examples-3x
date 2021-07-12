@@ -17,7 +17,8 @@ class NativeViewControllerCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: TBLTitleLabel!
     @IBOutlet weak var attributionButton: UIButton!
 
-    override func prepareForReuse() {
+    override func prepareForReuse() { // call this in order to have a "fresh start" on each cell
+        super.prepareForReuse()
         imageView.image = nil
         descriptionLabel.text = ""
         brandingLabel.text = ""

@@ -22,23 +22,21 @@ class ClassicCollectionViewManagedByTaboolaController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                
-        classicPage = TBLClassicPage.init(pageType: "article", pageUrl: "http://www.example.com", delegate: self, scrollView: self.collectionView)
-        classicPage?.pageExtraProperties = ["key":"true"]
+        classicPage = TBLClassicPage.init(pageType: Constants.pageTypeArticle, pageUrl: Constants.pageUrl, delegate: self, scrollView: self.collectionView)
+        classicPage?.pageExtraProperties = ["key":"true"] // example for pageExtraProperties
         
-        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Below Article", mode: "alternating-widget-without-video-1x4")
+        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: Constants.placementBelowArticle, mode: Constants.widgetMode_1x4)
         
         if let taboolaWidgetPlacement = taboolaWidgetPlacement{
             taboolaWidgetPlacement.fetchContent()
         }
         
-        taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: "Feed without video", mode: "thumbs-feed-01")
+        taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: Constants.placementFeedWithoutVideo, mode: Constants.thumbsFeedMode)
 
         if let taboolaFeedPlacement = taboolaFeedPlacement{
             taboolaFeedPlacement.fetchContent()
         }
     }
-   
-
 }
 
 extension ClassicCollectionViewManagedByTaboolaController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

@@ -29,11 +29,11 @@ class ClassicConstraintsScrollViewController: UIViewController {
     }
     
     func taboolaInit(){
-        classicPage = TBLClassicPage.init(pageType: "article", pageUrl: "http://www.example.com", delegate: self, scrollView: scrollView)
+        classicPage = TBLClassicPage.init(pageType: Constants.pageTypeArticle, pageUrl: Constants.pageUrl, delegate: self, scrollView: scrollView)
         
-        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Above Article", mode: "alternating-widget-without-video-1x1")
+        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Above Article", mode: Constants.widgetMode_1x1)
         
-        taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: "Feed without video", mode: "thumbs-feed-01")
+        taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: Constants.placementFeedWithoutVideo, mode: Constants.thumbsFeedMode)
 
         if let taboolaWidgetPlacement = taboolaWidgetPlacement{
             taboolaWidgetPlacement.fetchContent()

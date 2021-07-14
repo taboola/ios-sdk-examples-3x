@@ -42,10 +42,10 @@ class ClassicFrameScrollViewController: UIViewController {
     }
     
     func taboolaInit(){
-        classicPage = TBLClassicPage.init(pageType: "article", pageUrl: "http://www.example.com", delegate: self, scrollView: self.scrollView)
+        classicPage = TBLClassicPage.init(pageType: Constants.pageTypeArticle, pageUrl: Constants.pageUrl, delegate: self, scrollView: self.scrollView)
         
         // Creating the first Taboola object - Widget
-        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Below Article", mode: "alternating-widget-without-video-1x4")
+        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: Constants.placementBelowArticle, mode: Constants.widgetMode_1x4)
     
         if let taboolaWidgetPlacement = taboolaWidgetPlacement{
             // Creating the frame of the Widget
@@ -60,7 +60,7 @@ class ClassicFrameScrollViewController: UIViewController {
             scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: topText.frame.size.height +  taboolaWidgetPlacement.placementHeight)
             
             // Creating the second Taboola object - Feed
-            taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: "Feed without video", mode: "thumbs-feed-01 video")
+            taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: Constants.placementFeedWithoutVideo, mode: "thumbs-feed-01 video")
             
             if let taboolaFeedPlacement = taboolaFeedPlacement{
                 taboolaFeedPlacement.fetchContent()
@@ -89,7 +89,7 @@ class ClassicFrameScrollViewController: UIViewController {
 extension ClassicFrameScrollViewController: TBLClassicPageDelegate {
     func classicUnit(_ classicUnit: UIView!, didLoadOrResizePlacementName placementName: String!, height: CGFloat, placementType: PlacementType) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
-        if placementName == Constants.widgetPlacement{
+        if placementName == Constants.placementBelowArticle{
             if let taboolaWidgetPlacement = taboolaWidgetPlacement {
                 taboolaWidgetPlacement.frame = CGRect(x: 0, y: topText.frame.size.height, width: self.view.frame.size.width, height: taboolaWidgetPlacement.placementHeight)
 

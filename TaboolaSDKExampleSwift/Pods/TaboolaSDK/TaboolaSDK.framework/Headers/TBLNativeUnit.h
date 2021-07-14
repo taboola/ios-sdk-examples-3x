@@ -41,22 +41,19 @@ NS_ASSUME_NONNULL_BEGIN
  @param onSuccess success completion block
  @param onFailure failure completion block
 */
-- (void)fetchOnSuccess:(TBRequestSuccessCallback)onSuccess
-             onFailure:(TBRequestFailureCallback)onFailure;
-
-/*!
- @discussion Call this function to fetch content of the next batch (the articles to come)
- 
- @param onSuccess success completion block
- @param onFailure failure completion block
-*/
-- (void)fetchNextBatchOnSuccess:(TBRequestSuccessCallback)onSuccess
-                      onFailure:(TBRequestFailureCallback)onFailure;
+- (void)fetchContentOnSuccess:(TBRequestSuccessCallback)onSuccess
+                    onFailure:(TBRequestFailureCallback)onFailure;
 
 /*!
  @discussion Called in order to clean the datasource
 */
 -(void)clear;
+
+
+/*!
+ @discussion use to report to SDK on scroll and send visible event
+*/
+- (void)checkIfVisibleFromScroll:(UIScrollView*)scrollView;
 
 @end
 

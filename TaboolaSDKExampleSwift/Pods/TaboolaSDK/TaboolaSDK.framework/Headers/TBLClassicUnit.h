@@ -35,19 +35,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGFloat placementHeight;
 
 /*!
- @brief Resets TaboolaView - All conents and pushed commands are cleared. new commands must be pushed before fetching data again.
-*/
-- (void)reset;
-
-/*!
- @brief Refreshes the recommendations displayed on these webviews.
-*/
-- (void)refresh;
-
-/*!
  @brief After initializing TaboolaView, this method should be called to actually fetch the recommendations
 */
 - (void)fetchContent;
+
+/*
+ @brief Resets TaboolaView - All conents and pushed commands are cleared. new commands must be pushed before fetching data again.
+*/
+- (void)reset;
 
 /*!
  When returning from background mode and / or scrolling to top - call this function to ensure proper use in the SDK

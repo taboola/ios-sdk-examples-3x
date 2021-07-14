@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, FetchingPolicy) {
 
  @return TBLClassicPage object
  */
-- (instancetype)initWithPageType:(NSString *)pageType pageUrl:(NSString *)pageUrl delegate:(id<TBLClassicPageDelegate>)delegate scrollView:(UIScrollView*)scrollView;
+- (instancetype)initWithPageType:(NSString *)pageType pageUrl:(NSString *)pageUrl delegate:(id<TBLClassicPageDelegate>)delegate scrollView:(nullable UIScrollView*)scrollView;
 
 /*!
  @param name The current placement's name
@@ -68,14 +68,14 @@ typedef NS_ENUM(NSInteger, FetchingPolicy) {
 - (void)addUnit:(TBLClassicUnit*)unit placementName:(NSString *)placementName mode:(NSString *)mode;
 
 /*!
- @discussion Call this function when webviews refresh is needed (all TBLClassicUnits included in the controller will be refreshed)
-*/
-- (void)refresh;
-
-/*!
  @discussion Resets all TBLClassicUnits included in the controller. New commands must be pushed before fetching data again.
 */
 - (void)reset;
+
+/*!
+ Fetches content on all it's TBLClassicUnit objects.
+ */
+- (void)fetchAllUnitsContent;
 
 @end
 

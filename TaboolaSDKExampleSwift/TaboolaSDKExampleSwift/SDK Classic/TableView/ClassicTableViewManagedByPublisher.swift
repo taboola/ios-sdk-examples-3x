@@ -25,15 +25,15 @@ class ClassicTableViewManagedByPublisherController: UIViewController {
     }
     
     func taboolaInit(){
-        classicPage = TBLClassicPage.init(pageType: "article", pageUrl: "http://www.example.com", delegate: self, scrollView: self.tableView)
+        classicPage = TBLClassicPage.init(pageType: Constants.pageTypeArticle, pageUrl: Constants.pageUrl, delegate: self, scrollView: self.tableView)
         
-        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Below Article", mode: "alternating-widget-without-video-1x4")
+        taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: Constants.placementBelowArticle, mode: Constants.widgetMode_1x4)
         
         if let taboolaWidgetPlacement = taboolaWidgetPlacement{
             taboolaWidgetPlacement.fetchContent()
         }
         
-        taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: "Feed without video", mode: "thumbs-feed-01")
+        taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: Constants.placementFeedWithoutVideo, mode: Constants.thumbsFeedMode)
 
         if let taboolaFeedPlacement = taboolaFeedPlacement{
             taboolaFeedPlacement.fetchContent()
@@ -104,7 +104,7 @@ extension ClassicTableViewManagedByPublisherController: UITableViewDataSource, U
 extension ClassicTableViewManagedByPublisherController: TBLClassicPageDelegate {
     func classicUnit(_ classicUnit: UIView!, didLoadOrResizePlacementName placementName: String!, height: CGFloat, placementType: PlacementType) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
-        if placementName == Constants.widgetPlacement{
+        if placementName == Constants.placementBelowArticle{
             taboolaWidgetPlacement?.frame = CGRect(x: 0,y: 0,width: self.view.frame.size.width,height: taboolaWidgetPlacement?.placementHeight ?? 200)
         }
         else{

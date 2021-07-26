@@ -89,28 +89,7 @@ extension NativeViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.attributionButton.addTarget(self, action: #selector(clickedTaboolaAttribution), for: .touchDown)
             guard let itemsArray = itemsArray else { return UICollectionViewCell() }
             if let item = itemsArray[indexPath.row] as? TBLNativeItem {
-                // try to fetch image from dictionary. else, use TBItem for a default
-                if let imageUrl = item.extraDataDictionary()["imageUrl"] as? NSString {
-                    DispatchQueue.global(qos: .background).async {
-                        guard let url = NSURL(string: imageUrl as String) as URL?,
-                              let data = NSData.init(contentsOf: url) else { return }
-                        DispatchQueue.main.async {
-                            cell.imageView.image = UIImage(data: data as Data)
-                        }
-                    }
-                    cell.imageView.isHidden = false
-                    cell.tbImageView.isHidden = true
-                    cell.tbImageView.isUserInteractionEnabled = false
-                    cell.imageView.isUserInteractionEnabled = true
-                } else {
-                    item.initThumbnailView(cell.tbImageView)
-                    cell.imageView.isHidden = true
-                    cell.tbImageView.isHidden = false
-                    cell.tbImageView.isUserInteractionEnabled = true
-                    cell.imageView.isUserInteractionEnabled = false
-                }
-                
-                // set other cell elements
+                item.initThumbnailView(cell.tbImageView)
                 item.initTitleView(cell.titleLabel)
                 item.initBrandingView(cell.brandingLabel)
             }
@@ -131,13 +110,7 @@ extension NativeViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let itemsArray = itemsArray else {
-            print("An error occured with itemsArray")
-            return
-        }
-        if let item = itemsArray[indexPath.row] as? TBLNativeItem {
-            item.handleClickEvent()
-        }
+        // when clicking an item an internal delegate is called and opens the article
     }
     
     @objc func clickedTaboolaAttribution() {

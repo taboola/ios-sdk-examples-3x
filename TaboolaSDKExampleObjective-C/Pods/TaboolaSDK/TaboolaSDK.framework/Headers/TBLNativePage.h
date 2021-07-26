@@ -73,7 +73,6 @@ TBLNativePage is the first object to initialize, and is being used to fetch Tabo
 */
 - (TBLNativeUnit*)createUnitWithPlacement:(NSString *)placement numberOfItems:(int)numberOfItems;
 
-
 /*!
 @discussion Call this function if you want to handle attribution click.
 */

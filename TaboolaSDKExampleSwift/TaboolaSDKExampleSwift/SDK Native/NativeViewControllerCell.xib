@@ -23,29 +23,26 @@
                         </constraints>
                         <state key="normal" title="Attribution click"/>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DTW-hU-1zP">
-                        <rect key="frame" x="0.0" y="30" width="375" height="160"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Px4-Mb-emb" customClass="TBLImageView">
-                        <rect key="frame" x="0.0" y="30" width="364.5" height="160"/>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Px4-Mb-emb" customClass="TBLImageView">
+                        <rect key="frame" x="0.0" y="30" width="375" height="235.5"/>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hok-FG-f3Y">
-                        <rect key="frame" x="5" y="190" width="365" height="125"/>
+                        <rect key="frame" x="5" y="265.5" width="365" height="49.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqS-ce-cMq" customClass="TBLTitleLabel">
-                                <rect key="frame" x="0.0" y="0.0" width="365" height="52"/>
+                                <rect key="frame" x="0.0" y="0.0" width="365" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySo-TI-Wki" customClass="TBLBrandingLabel">
-                                <rect key="frame" x="0.0" y="53" width="365" height="34"/>
+                                <rect key="frame" x="0.0" y="21.5" width="365" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kv9-2J-eoH" customClass="TBLDescriptionLabel">
-                                <rect key="frame" x="0.0" y="88" width="365" height="37"/>
+                                <rect key="frame" x="0.0" y="36" width="365" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -55,22 +52,16 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="height" secondItem="DTW-hU-1zP" secondAttribute="height" multiplier="2" id="4TH-77-VtV"/>
-                <constraint firstItem="DTW-hU-1zP" firstAttribute="width" secondItem="Px4-Mb-emb" secondAttribute="width" multiplier="1.02817" id="7dK-cF-z0O"/>
                 <constraint firstAttribute="trailing" secondItem="0bR-Wh-5aV" secondAttribute="trailing" id="DG3-rk-PZm"/>
                 <constraint firstAttribute="bottom" secondItem="Hok-FG-f3Y" secondAttribute="bottom" constant="5" id="Dgo-To-rpI"/>
-                <constraint firstItem="DTW-hU-1zP" firstAttribute="top" secondItem="0bR-Wh-5aV" secondAttribute="bottom" id="Kro-0S-Qs0"/>
                 <constraint firstAttribute="trailing" secondItem="Hok-FG-f3Y" secondAttribute="trailing" constant="5" id="LFZ-lm-sZ0"/>
-                <constraint firstItem="DTW-hU-1zP" firstAttribute="leading" secondItem="Px4-Mb-emb" secondAttribute="leading" id="Mwo-Th-1aO"/>
+                <constraint firstItem="Px4-Mb-emb" firstAttribute="leading" secondItem="svE-sm-ZUw" secondAttribute="leading" id="UDw-Zc-ijT"/>
+                <constraint firstItem="Px4-Mb-emb" firstAttribute="bottom" secondItem="Hok-FG-f3Y" secondAttribute="top" id="XG2-sg-zWx"/>
                 <constraint firstItem="0bR-Wh-5aV" firstAttribute="top" secondItem="svE-sm-ZUw" secondAttribute="top" id="a4g-qx-vPk"/>
-                <constraint firstItem="DTW-hU-1zP" firstAttribute="bottom" secondItem="Hok-FG-f3Y" secondAttribute="top" id="bDa-JQ-o8r"/>
                 <constraint firstItem="Px4-Mb-emb" firstAttribute="top" secondItem="0bR-Wh-5aV" secondAttribute="bottom" id="ej7-xT-jv1"/>
-                <constraint firstItem="DTW-hU-1zP" firstAttribute="top" secondItem="Px4-Mb-emb" secondAttribute="top" id="ibf-0n-e1V"/>
-                <constraint firstItem="DTW-hU-1zP" firstAttribute="height" secondItem="Px4-Mb-emb" secondAttribute="height" id="kw5-9Q-Jas"/>
-                <constraint firstItem="DTW-hU-1zP" firstAttribute="leading" secondItem="svE-sm-ZUw" secondAttribute="leading" id="n0Y-fG-xe1"/>
+                <constraint firstAttribute="trailing" secondItem="Px4-Mb-emb" secondAttribute="trailing" id="mfY-a8-huv"/>
                 <constraint firstItem="Hok-FG-f3Y" firstAttribute="leading" secondItem="svE-sm-ZUw" secondAttribute="leading" constant="5" id="u7B-xt-kD8"/>
                 <constraint firstItem="0bR-Wh-5aV" firstAttribute="leading" secondItem="svE-sm-ZUw" secondAttribute="leading" id="v9u-NT-E16"/>
-                <constraint firstAttribute="trailing" secondItem="DTW-hU-1zP" secondAttribute="trailing" id="z06-Ws-aaX"/>
             </constraints>
             <size key="customSize" width="286" height="187"/>
             <connections>

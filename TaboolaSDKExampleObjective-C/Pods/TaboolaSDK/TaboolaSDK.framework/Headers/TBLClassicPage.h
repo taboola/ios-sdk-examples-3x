@@ -46,6 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithPageType:(NSString *)pageType pageUrl:(NSString *)pageUrl delegate:(id<TBLClassicPageDelegate>)delegate scrollView:(nullable UIScrollView*)scrollView;
 
+
 /*!
  @param placementName The current placement's name
  @param mode Widget's UI mode (template)

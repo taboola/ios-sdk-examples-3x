@@ -2,8 +2,7 @@
 //  ClassicTableViewController.swift
 //  TaboolaSDKExampleV3
 //
-//  Created by Liad Elidan on 20/04/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 import UIKit
@@ -24,24 +23,24 @@ class ClassicTableViewManagedByTaboolaController: UIViewController {
         taboolaInit()
     }
     
-    func taboolaInit(){
+    func taboolaInit() {
         classicPage = TBLClassicPage.init(pageType: Constants.pageTypeArticle, pageUrl: Constants.pageUrl, delegate: self, scrollView: self.tableView)
         
         taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: Constants.placementBelowArticle, mode: Constants.widgetMode_1x4)
         
-        if let taboolaWidgetPlacement = taboolaWidgetPlacement{
+        if let taboolaWidgetPlacement = taboolaWidgetPlacement {
             taboolaWidgetPlacement.fetchContent()
         }
         
         taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: Constants.placementFeedWithoutVideo, mode: Constants.thumbsFeedMode)
 
-        if let taboolaFeedPlacement = taboolaFeedPlacement{
+        if let taboolaFeedPlacement = taboolaFeedPlacement {
             taboolaFeedPlacement.fetchContent()
         }
     }
 }
 
-extension ClassicTableViewManagedByTaboolaController: UITableViewDataSource, UITableViewDelegate{
+extension ClassicTableViewManagedByTaboolaController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -52,7 +51,7 @@ extension ClassicTableViewManagedByTaboolaController: UITableViewDataSource, UIT
                 return cell
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: "RandomCell", for: indexPath)
-            cell.backgroundColor = random()
+            cell.backgroundColor = UIColor.random()
             return cell
         case Constants.taboolaFeedSection:
             if let taboolaFeedPlacement = taboolaFeedPlacement {
@@ -60,20 +59,13 @@ extension ClassicTableViewManagedByTaboolaController: UITableViewDataSource, UIT
                 return cell
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: "RandomCell", for: indexPath)
-            cell.backgroundColor = random()
+            cell.backgroundColor = UIColor.random()
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "RandomCell", for: indexPath)
-            cell.backgroundColor = random()
+            cell.backgroundColor = UIColor.random()
             return cell
         }
-    }
-    
-    func random() -> UIColor {
-        return UIColor(red: .random(in: 0...1),
-                       green: .random(in: 0...1),
-                       blue: .random(in: 0...1),
-                       alpha: 1.0)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,13 +79,13 @@ extension ClassicTableViewManagedByTaboolaController: UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var widgetHeight = CGFloat(200.0)
 
-        if indexPath.section == Constants.taboolaWidgetSection{
-            if let taboolaHeight = taboolaWidgetPlacement?.tableView(tableView, heightForRowAt: indexPath, withUIInsets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)){
+        if indexPath.section == Constants.taboolaWidgetSection {
+            if let taboolaHeight = taboolaWidgetPlacement?.tableView(tableView, heightForRowAt: indexPath, withUIInsets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)) {
                 widgetHeight = taboolaHeight
             }
         }
-        if indexPath.section == Constants.taboolaFeedSection{
-            if let taboolaHeight = taboolaFeedPlacement?.tableView(tableView, heightForRowAt: indexPath, withUIInsets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)){
+        if indexPath.section == Constants.taboolaFeedSection {
+            if let taboolaHeight = taboolaFeedPlacement?.tableView(tableView, heightForRowAt: indexPath, withUIInsets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)) {
                 widgetHeight = taboolaHeight
             }
         }
@@ -111,7 +103,7 @@ extension ClassicTableViewManagedByTaboolaController: TBLClassicPageDelegate {
     }
     
     func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool) -> Bool {
-        return true;
+        return true
     }
 }
 

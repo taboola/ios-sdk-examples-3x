@@ -2,8 +2,7 @@
 //  ClassicScrollViewController.m
 //  TaboolaSDKExampleObjective-C
 //
-//  Created by Liad Elidan on 02/06/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 #import "ClassicFrameScrollViewController.h"
@@ -35,15 +34,15 @@
     [_scrollView addSubview:_topText];
     _topText.text = textToAdd;
 
-    _topText.numberOfLines=0;
-    _topText.lineBreakMode=NSLineBreakByWordWrapping;
+    _topText.numberOfLines = 0;
+    _topText.lineBreakMode = NSLineBreakByWordWrapping;
     
     [_topText sizeToFit];
     
     [self taboolaInit];
 }
 
--(void)taboolaInit {
+- (void)taboolaInit {
     _classicPage = [[TBLClassicPage alloc]initWithPageType:@"article" pageUrl:@"http://www.example.com" delegate:self scrollView:_scrollView];
     
     _taboolaFeedPlacement = [_classicPage createUnitWithPlacementName:@"Feed without video" mode:@"thumbs-feed-01 video"];
@@ -63,7 +62,7 @@
 
 #pragma mark - TBLClassicPageDelegate
 
--(void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType{
+- (void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType {
     NSLog(@"%@", placementName);
 
     _scrollView.contentSize = CGSizeMake(self.view.frame.size.width, _taboolaFeedPlacement.placementHeight + _topText.frame.size.height);

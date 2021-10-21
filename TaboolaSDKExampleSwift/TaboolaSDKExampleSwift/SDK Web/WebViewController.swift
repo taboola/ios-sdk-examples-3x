@@ -2,14 +2,13 @@
 //  WebViewController.swift
 //  TaboolaSDKExampleV3
 //
-//  Created by Liad Elidan on 22/03/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 import Foundation
 import TaboolaSDK
 
-class WebViewController: UIViewController, WKNavigationDelegate{
+class WebViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webViewContainer: UIView!
     var webView = WKWebView()
     
@@ -52,6 +51,6 @@ extension WebViewController: TBLWebPageDelegate {
     func webView(_ webView: WKWebView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool) -> Bool {
         // Return 'true' for Taboola SDK to handle the click event (default behavior).
         // Return 'false' to handle the click event yourself. (Applicable for organic content only.)
-        return true;
+        return true
     }
 }

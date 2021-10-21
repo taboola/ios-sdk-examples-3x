@@ -2,8 +2,7 @@
 //  ClassicFrameScrollViewController.swift
 //  TaboolaSDKExampleV3
 //
-//  Created by Liad Elidan on 22/04/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 import UIKit
@@ -41,13 +40,13 @@ class ClassicFrameScrollViewController: UIViewController {
         self.view.addSubview(scrollView)
     }
     
-    func taboolaInit(){
+    func taboolaInit() {
         classicPage = TBLClassicPage.init(pageType: Constants.pageTypeArticle, pageUrl: Constants.pageUrl, delegate: self, scrollView: self.scrollView)
         
         // Creating the first Taboola object - Widget
         taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: Constants.placementBelowArticle, mode: Constants.widgetMode_1x4)
     
-        if let taboolaWidgetPlacement = taboolaWidgetPlacement{
+        if let taboolaWidgetPlacement = taboolaWidgetPlacement {
             // Creating the frame of the Widget
             taboolaWidgetPlacement.frame = CGRect(x: 0, y: topText.frame.size.height, width: self.view.frame.size.width, height: 200)
             
@@ -62,7 +61,7 @@ class ClassicFrameScrollViewController: UIViewController {
             // Creating the second Taboola object - Feed
             taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: Constants.placementFeedWithoutVideo, mode: "thumbs-feed-01 video")
             
-            if let taboolaFeedPlacement = taboolaFeedPlacement{
+            if let taboolaFeedPlacement = taboolaFeedPlacement {
                 taboolaFeedPlacement.fetchContent()
                 
                 // Setting the contentSize of the scrollView to include: midText height, Widget height and Feed height
@@ -71,14 +70,14 @@ class ClassicFrameScrollViewController: UIViewController {
         }
     }
         
-    func textCreator(labeToEdit: UILabel){
+    func textCreator(labeToEdit: UILabel) {
         labeToEdit.text = Constants.textToAdd
         labeToEdit.numberOfLines = 0
         labeToEdit.lineBreakMode = NSLineBreakMode.byWordWrapping
         labeToEdit.sizeToFit()
     }
     
-    func loadMidText(taboolaWidgetPlacement: TBLClassicUnit){
+    func loadMidText(taboolaWidgetPlacement: TBLClassicUnit) {
         didLoadWidget = true
         midText = UILabel(frame: CGRect(x: 0, y: topText.frame.size.height + taboolaWidgetPlacement.placementHeight, width: screenSize.width, height: screenSize.height))
         textCreator(labeToEdit: midText)
@@ -89,19 +88,19 @@ class ClassicFrameScrollViewController: UIViewController {
 extension ClassicFrameScrollViewController: TBLClassicPageDelegate {
     func classicUnit(_ classicUnit: UIView!, didLoadOrResizePlacementName placementName: String!, height: CGFloat, placementType: PlacementType) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
-        if placementName == Constants.placementBelowArticle{
+        if placementName == Constants.placementBelowArticle {
             if let taboolaWidgetPlacement = taboolaWidgetPlacement {
                 taboolaWidgetPlacement.frame = CGRect(x: 0, y: topText.frame.size.height, width: self.view.frame.size.width, height: taboolaWidgetPlacement.placementHeight)
 
                 // Adding mid article widget to the ScrollView
-                if taboolaWidgetPlacement.placementHeight > 0 && !didLoadWidget{
+                if taboolaWidgetPlacement.placementHeight > 0 && !didLoadWidget {
                     loadMidText(taboolaWidgetPlacement: taboolaWidgetPlacement)
                 }
                 
             scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: topText.frame.size.height + taboolaWidgetPlacement.placementHeight + midText.frame.size.height)
             }
-        } else{
-            if let taboolaFeedPlacement = taboolaFeedPlacement{
+        } else {
+            if let taboolaFeedPlacement = taboolaFeedPlacement {
                 taboolaFeedPlacement.frame = CGRect(x: 0, y: topText.frame.size.height + (taboolaWidgetPlacement?.placementHeight ?? 0) + midText.frame.size.height, width: self.view.frame.size.width, height: taboolaFeedPlacement.placementHeight)
                 
                 if !didLoadFeed {
@@ -120,6 +119,6 @@ extension ClassicFrameScrollViewController: TBLClassicPageDelegate {
     }
     
     func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool) -> Bool {
-        return true;
+        return true
     }
 }

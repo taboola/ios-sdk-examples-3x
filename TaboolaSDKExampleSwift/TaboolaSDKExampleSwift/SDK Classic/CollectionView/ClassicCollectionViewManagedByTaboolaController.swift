@@ -2,8 +2,7 @@
 //  ClassicCollectionViewManagedByTaboolaController.swift
 //  TaboolaSDKExampleV3
 //
-//  Created by Liad Elidan on 22/03/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 import UIKit
@@ -27,13 +26,13 @@ class ClassicCollectionViewManagedByTaboolaController: UIViewController {
         
         taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: Constants.placementBelowArticle, mode: Constants.widgetMode_1x4)
         
-        if let taboolaWidgetPlacement = taboolaWidgetPlacement{
+        if let taboolaWidgetPlacement = taboolaWidgetPlacement {
             taboolaWidgetPlacement.fetchContent()
         }
         
         taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: Constants.placementFeedWithoutVideo, mode: Constants.thumbsFeedMode)
 
-        if let taboolaFeedPlacement = taboolaFeedPlacement{
+        if let taboolaFeedPlacement = taboolaFeedPlacement {
             taboolaFeedPlacement.fetchContent()
         }
     }
@@ -42,36 +41,30 @@ class ClassicCollectionViewManagedByTaboolaController: UIViewController {
 extension ClassicCollectionViewManagedByTaboolaController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         switch indexPath.section {
         case Constants.taboolaWidgetSection:
             if let taboolaWidgetPlacement = taboolaWidgetPlacement {
+                // get a cell managed by Taboola SDK
                 let cell = taboolaWidgetPlacement.collectionView(collectionView, cellForItemAt: indexPath, withBackground: UIColor.red)
                 return cell
             }
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomCell", for: indexPath)
-            cell.backgroundColor = random()
+            cell.backgroundColor = UIColor.random()
             return cell
         case Constants.taboolaFeedSection:
             if let taboolaFeedPlacement = taboolaFeedPlacement {
+                // get a cell managed by Taboola SDK
                 let cell = taboolaFeedPlacement.collectionView(collectionView, cellForItemAt: indexPath, withBackground: nil)
                 return cell
             }
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomCell", for: indexPath)
-            cell.backgroundColor = random()
+            cell.backgroundColor = UIColor.random()
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomCell", for: indexPath)
-            cell.backgroundColor = random()
+            cell.backgroundColor = UIColor.random()
             return cell
         }
-    }
-    
-    func random() -> UIColor {
-        return UIColor(red: .random(in: 0...1),
-                       green: .random(in: 0...1),
-                       blue: .random(in: 0...1),
-                       alpha: 1.0)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -85,14 +78,13 @@ extension ClassicCollectionViewManagedByTaboolaController: UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var widgetSize = CGSize(width: self.view.frame.size.width, height: 200)
 
-        if indexPath.section == Constants.taboolaWidgetSection{
-            if let taboolaSize = taboolaWidgetPlacement?.collectionView(collectionView, layout: collectionView.collectionViewLayout, sizeForItemAt: indexPath, withUIInsets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)){
+        if indexPath.section == Constants.taboolaWidgetSection {
+            if let taboolaSize = taboolaWidgetPlacement?.collectionView(collectionView, layout: collectionView.collectionViewLayout, sizeForItemAt: indexPath, withUIInsets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)) {
                     widgetSize = taboolaSize
             }
         }
-        
-        if indexPath.section == Constants.taboolaFeedSection{
-            if let taboolaSize = taboolaFeedPlacement?.collectionView(collectionView, layout: collectionView.collectionViewLayout, sizeForItemAt: indexPath, withUIInsets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)){
+        else if indexPath.section == Constants.taboolaFeedSection {
+            if let taboolaSize = taboolaFeedPlacement?.collectionView(collectionView, layout: collectionView.collectionViewLayout, sizeForItemAt: indexPath, withUIInsets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)) {
                     widgetSize = taboolaSize
                 }
         }
@@ -110,6 +102,6 @@ extension ClassicCollectionViewManagedByTaboolaController: TBLClassicPageDelegat
     }
     
     func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool) -> Bool {
-        return false;
+        return false
     }
 }

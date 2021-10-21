@@ -2,8 +2,7 @@
 //  NativeViewController.swift
 //  TaboolaSDKExampleV3
 //
-//  Created by Liad Elidan on 22/03/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 import Foundation
@@ -26,7 +25,7 @@ class NativeViewController: UIViewController {
     func taboolaInit() {
         nativePage =  TBLNativePage.init(delegate: self, sourceType: SourceTypeText, pageUrl: Constants.pageUrl)
         taboolaUnit = nativePage?.createUnit(withPlacement: Constants.widgetMode_1x4, numberOfItems: 5)
-                
+
         taboolaUnit?.fetchContent(onSuccess: {[weak self] (response) in
             self?.itemsArray = response?.items
             self?.collectionView.reloadData()
@@ -121,7 +120,7 @@ extension NativeViewController: UICollectionViewDelegate, UICollectionViewDataSo
 extension NativeViewController: TBLNativePageDelegate {
     func taboolaView(_ taboolaView: UIView!, didLoadOrResizePlacement placementName: String!, withHeight height: CGFloat, placementType: PlacementType) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
-        }
+    }
     
     func taboolaView(_ taboolaView: UIView!, didFailToLoadPlacementNamed placementName: String!, withErrorMessage error: String!) {
         print(error.debugDescription)

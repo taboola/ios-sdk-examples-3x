@@ -10,13 +10,9 @@
 #import "TBLClassicPageDelegate.h"
 #import "TBLClassicUnit.h"
 #import "TBLPage.h"
+#import "TBLStoriesUnit.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-typedef NS_ENUM(NSInteger, FetchingPolicy) {
-    FetchingPolicySerial = 0,
-    FetchingPolicyParallel
-};
 
 /*!
  TBLClassicPage is the first object to initialize, and is being used to create TaboolaView (widget or Feed)
@@ -33,7 +29,7 @@ typedef NS_ENUM(NSInteger, FetchingPolicy) {
 @property (nonatomic, strong) NSDictionary *pageExtraProperties;
 
 /*! @brief Optional. Use fetchingPolicy to change FetchingPolicy. Defult value 'FetchingPolicySerial' */
-@property (nonatomic) FetchingPolicy fetchingPolicy;
+@property (nonatomic) TBLFetchingPolicy fetchingPolicy;
 
 /*! @brief Optional. If Use fetchingPolicy is 'FetchingPolicySerial' it will use serialDelay in millis. Defult value '3000' */
 @property (nonatomic) int serialDelay;
@@ -50,15 +46,21 @@ typedef NS_ENUM(NSInteger, FetchingPolicy) {
  */
 - (instancetype)initWithPageType:(NSString *)pageType pageUrl:(NSString *)pageUrl delegate:(id<TBLClassicPageDelegate>)delegate scrollView:(nullable UIScrollView*)scrollView;
 
-/*!
- @param name The current placement's name
- @param mode Widget's UI mode (template)
- @param type PlacementType enum for widget or feed
-*/
 
 /*!
-  @discussion A must function that creates TBLClassicUnit in order to build Taboola widgets
-  @return TBLClassicUnit object (Taboola widget / Feed)
+ @param placementName The current placement's name
+ @param mode Widget's UI mode (template)
+ @param delegate storiesUnit delegate
+ @discussion A function that creates TBLStoriesUnit in order to build Taboola stories
+ @return TBLStoriesUnit object
+ */
+- (TBLStoriesUnit*)createStoryUnitWithPlacementName:(NSString *)placementName mode:(NSString *)mode extraParameters:(NSDictionary*)extraParams delegate:(id<TBLStoriesUnitDelegate>)delegate;
+
+/*!
+ @param placementName The current placement's name
+ @param mode Widget's UI mode (template)
+ @discussion A must function that creates TBLClassicUnit in order to build Taboola widgets
+ @return TBLClassicUnit object (Taboola widget / Feed)
  */
 - (TBLClassicUnit*)createUnitWithPlacementName:(NSString *)placementName mode:(NSString *)mode;
 

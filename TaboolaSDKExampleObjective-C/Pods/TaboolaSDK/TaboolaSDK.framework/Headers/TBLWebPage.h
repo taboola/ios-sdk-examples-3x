@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "TBLWebUnit.h"
 #import "TBLPage.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TBLWebPage : TBLPage
@@ -16,10 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 /*! @brief Optional. pageExtraProperties is a dictionary contains relevant property keys and data values. */
 @property (nonatomic, strong) NSDictionary *pageExtraProperties;
 
-- (instancetype)initWithDelegate:(id<TBLWebDelegate>)delegate;
+- (instancetype)initWithDelegate:(id<TBLWebPageDelegate>)delegate;
 
 - (TBLWebUnit*)createUnitWithWebView:(WKWebView *)webView;
 
+- (void)fetchAllUnitsContent;
+
+@property (nonatomic) TBLFetchingPolicy fetchingPolicy;
 
 @end
 

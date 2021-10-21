@@ -26,9 +26,11 @@
 #import "TBLPage.h"
 #import "TBLPublisherInfo.h"
 #import "TBLRecommendationResponse.h"
+#import "TBLStoriesCollectionView.h"
+#import "TBLStoriesUnit.h"
 #import "TBLTitleLabel.h"
-#import "TBLWebDelegate.h"
 #import "TBLWebPage.h"
+#import "TBLWebPageDelegate.h"
 #import "TBLWebUnit.h"
 
 FOUNDATION_EXPORT double TaboolaSDKVersionNumber;

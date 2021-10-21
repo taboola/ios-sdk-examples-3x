@@ -188,7 +188,7 @@
 				722CA6ED241792840022043F /* Frameworks */,
 				722CA6EE241792840022043F /* Resources */,
 				53CC3608EC2EFED37F6863B7 /* [CP] Embed Pods Frameworks */,
-				5E81ACC803B754D20DCF9E5E /* [CP] Copy Pods Resources */,
+				DAD34292B968373F3EE979CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,7 +288,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaboolaSDKExampleSwift/Pods-TaboolaSDKExampleSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5E81ACC803B754D20DCF9E5E /* [CP] Copy Pods Resources */ = {
+		DAD34292B968373F3EE979CF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

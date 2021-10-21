@@ -10,8 +10,8 @@ struct Constants {
     // Section for the Taboola Widget presentation
     static let taboolaWidgetSection = 6
     // Section for the Taboola Feed presentation
-    static let taboolaFeedSection = 12
-    static let totalSections = 13
+    static let taboolaFeedSection = 35
+    static let totalSections = 36
     static let totalRowsNative = 10
     static let totalSectionsNative = 1
     static let pageTypeArticle = "article"

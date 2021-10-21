@@ -13,8 +13,6 @@
 
 @interface TBLNativeItem : NSObject
 
-@property (nonatomic, weak) UIScrollView *parentScrollView;
-
 //create UIViews manually
 - (TBLImageView *)thumbnailView;
 - (TBLImageView *)thumbnailViewCompleted:(void (^)(NSError *, UIImage *))completed;

@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "TBLWebUnit.h"
 #import "TBLPage.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TBLWebPage : TBLPage
@@ -21,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (TBLWebUnit*)createUnitWithWebView:(WKWebView *)webView;
 
 - (void)fetchAllUnitsContent;
+
+@property (nonatomic) TBLFetchingPolicy fetchingPolicy;
 
 @end
 

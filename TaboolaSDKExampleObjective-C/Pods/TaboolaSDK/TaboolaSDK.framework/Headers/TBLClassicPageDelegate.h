@@ -5,15 +5,13 @@
 //  Created by Karen Shaham Palman on 27/08/2019.
 //  Copyright © 2019 Taboola. All rights reserved.
 //
-
-#ifndef TBLClassicPageDelegate_h
-#define TBLClassicPageDelegate_h
 #import <UIKit/UIKit.h>
 
 /*! @brief Enum. Determines the placement's type (Feed or Widget). */
 typedef enum {
     PlacementTypeFeed,
     PlacementTypeWidget,
+    PlacementTypeStory,
     PlacementTypeWidgetNone
 } PlacementType;
 /*!
@@ -32,33 +30,34 @@ typedef enum {
 @param organic Determines whether the article is organic or sponsored
 
 @return YES if the view should begin loading content; otherwise, NO. Default value is YES
+ 
 */
-- (BOOL)onItemClick:(NSString *)placementName withItemId:(NSString *)itemId withClickUrl:(NSString *)clickUrl isOrganic:(BOOL)organic;
+- (BOOL)classicUnit:(UIView*)classicUnit didClickPlacementName:(NSString *)placementName itemId:(NSString *)itemId clickUrl:(NSString *)clickUrl isOrganic:(BOOL)organic;
 
 /*!
-@discussion Triggered while the TaboolaView is being rendered
+@discussion Triggered while the unit is being rendered
 
-@param taboolaView The widget itself
+@param classicUnit The unit itself
 @param placementName The current placement (widget or feed)
-@param height TaboolaView's current height
+@param height unit's current height
 */
-- (void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType;
+- (void)classicUnit:(UIView *)classicUnit didLoadOrResizePlacementName:(NSString *)placementName height:(CGFloat)height placementType:(PlacementType)placementType;
 
 /*!
-@discussion Triggered after TaboolaView is failed to render.
+@discussion Triggered after unit is failed to render.
 
-@param taboolaView The widget itself
+@param classicUnit The unit itself
 @param placementName The current placement (widget or feed)
 @param error The error recieved when TaboolaView is failed to render
 */
-- (void)taboolaView:(UIView *)taboolaView didFailToLoadPlacementNamed:(NSString *)placementName withErrorMessage:(NSString *)error;
+- (void)classicUnit:(UIView *)classicUnit didFailToLoadPlacementName:(NSString *)placementName errorMessage:(NSString *)error;
 
 /*!
  @discussion Triggered when the TaboolaView is scrolled to top
  
- @param taboolaView The widget itself
+ @param classicUnit The widget itself
 */
-- (void)scrollViewDidScrollToTopTaboolaView:(UIView *)taboolaView;
+- (void)scrollViewDidScrollToTopClassicUnit:(UIView *)classicUnit;
 
 /*!
  @discussion Triggered when an action was clicked (e.g. clicked Save For Later)
@@ -69,5 +68,3 @@ typedef enum {
 - (void)clickedOnAction:(NSNumber *)actionType data:(NSDictionary *)data;
 
 @end
-
-#endif /* TaboolaViewDelegate_h */

@@ -6,13 +6,11 @@
 //  Copyright © 2019 Taboola. All rights reserved.
 //
 
-#ifndef TaboolaWebDelegate_h
-#define TaboolaWebDelegate_h
 #import <UIKit/UIKit.h>
 #import "TBLClassicUnit.h"
 #import <WebKit/WebKit.h>
 
-@protocol TBLWebDelegate <NSObject>
+@protocol TBLWebPageDelegate <NSObject>
 
 @optional
 /*!
@@ -25,7 +23,7 @@
 
 @return YES if the view should begin loading content; otherwise, NO. Default value is YES
 */
-- (BOOL)onItemClick:(NSString *)placementName withItemId:(NSString *)itemId withClickUrl:(NSString *)clickUrl isOrganic:(BOOL)organic;
+- (BOOL)webView:(WKWebView *)webView didClickPlacementName:(NSString *)placementName itemId:(NSString *)itemId clickUrl:(NSString *)clickUrl isOrganic:(BOOL)organic;
 
 /*!
 @discussion Triggered after the Taboola is succesfully rendered
@@ -34,7 +32,7 @@
 @param placementName The current placement (widget or feed)
 @param height TaboolaView's current height
 */
-- (void)webView:(WKWebView *)webView didLoadPlacementNamed:(NSString *)placementName withHeight:(CGFloat)height;
+- (void)webView:(WKWebView *)webView didLoadPlacementName:(NSString *)placementName height:(CGFloat)height;
 
 /*!
 @discussion Triggered after Taboola is failed to render.
@@ -43,9 +41,8 @@
 @param placementName The current placement (widget or feed)
 @param error The error recieved when TaboolaView is failed to render
 */
-- (void)webView:(WKWebView *)webView didFailToLoadPlacementNamed:(NSString *)placementName withErrorMessage:(NSString *)error;
+- (void)webView:(WKWebView *)webView didFailToLoadPlacementName:(NSString *)placementName errorMessage:(NSString *)error;
 
 
 @end
 
-#endif /* TaboolaWebDelegate_h */

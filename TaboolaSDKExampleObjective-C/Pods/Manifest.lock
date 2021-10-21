@@ -3,7 +3,6 @@ PODS:
 
 DEPENDENCIES:
   - TaboolaSDK (= 3.5.3)
-
 SPEC REPOS:
   trunk:
     - TaboolaSDK

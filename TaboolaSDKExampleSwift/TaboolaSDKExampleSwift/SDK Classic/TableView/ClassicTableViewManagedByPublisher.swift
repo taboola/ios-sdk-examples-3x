@@ -2,8 +2,7 @@
 //  ClassicTableViewManagedByPublisher.swift
 //  TaboolaSDKExampleV3
 //
-//  Created by Liad Elidan on 13/05/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 import UIKit
@@ -18,66 +17,60 @@ class ClassicTableViewManagedByPublisherController: UIViewController {
     // TBLClassicUnit object represnting Widget/Feed
     var taboolaWidgetPlacement: TBLClassicUnit?
     var taboolaFeedPlacement: TBLClassicUnit?
-    
+
+    fileprivate let taboolaCellIdentifier = "TaboolaTableViewCell"
     override func viewDidLoad() {
         super.viewDidLoad()
         taboolaInit()
     }
     
-    func taboolaInit(){
+    func taboolaInit() {
         classicPage = TBLClassicPage.init(pageType: Constants.pageTypeArticle, pageUrl: Constants.pageUrl, delegate: self, scrollView: self.tableView)
         
         taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: Constants.placementBelowArticle, mode: Constants.widgetMode_1x4)
         
-        if let taboolaWidgetPlacement = taboolaWidgetPlacement{
+        if let taboolaWidgetPlacement = taboolaWidgetPlacement {
             taboolaWidgetPlacement.fetchContent()
         }
         
         taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: Constants.placementFeedWithoutVideo, mode: Constants.thumbsFeedMode)
 
-        if let taboolaFeedPlacement = taboolaFeedPlacement{
+        if let taboolaFeedPlacement = taboolaFeedPlacement {
             taboolaFeedPlacement.fetchContent()
         }
     }
 }
 
-extension ClassicTableViewManagedByPublisherController: UITableViewDataSource, UITableViewDelegate{
+extension ClassicTableViewManagedByPublisherController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
         case Constants.taboolaWidgetSection:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TaboolaTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: taboolaCellIdentifier, for: indexPath)
             clearTaboolaInReusedCell(cell: cell)
-            if let taboolaWidgetPlacement = taboolaWidgetPlacement{
+            if let taboolaWidgetPlacement = taboolaWidgetPlacement {
                 cell.addSubview(taboolaWidgetPlacement)
             }
             return cell
         case Constants.taboolaFeedSection:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TaboolaTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: taboolaCellIdentifier, for: indexPath)
             clearTaboolaInReusedCell(cell: cell)
-            if let taboolaFeedPlacement = taboolaFeedPlacement{
+            if let taboolaFeedPlacement = taboolaFeedPlacement {
                 cell.addSubview(taboolaFeedPlacement)
             }
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "RandomCell", for: indexPath)
-            cell.backgroundColor = random()
+            cell.backgroundColor = UIColor.random()
             return cell
         }
     }
     
-    func clearTaboolaInReusedCell(cell :UITableViewCell){
-        for view in cell.subviews{
+    func clearTaboolaInReusedCell(cell :UITableViewCell) {
+        for view in cell.subviews {
             view.removeFromSuperview()
         }
-    }
-    
-    func random() -> UIColor {
-        return UIColor(red: .random(in: 0...1),
-                       green: .random(in: 0...1),
-                       blue: .random(in: 0...1),
-                       alpha: 1.0)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -96,7 +89,7 @@ extension ClassicTableViewManagedByPublisherController: UITableViewDataSource, U
         case Constants.taboolaFeedSection:
             return taboolaFeedPlacement?.placementHeight ?? 200
         default:
-            return 200;
+            return 200
         }
     }
 }
@@ -104,10 +97,10 @@ extension ClassicTableViewManagedByPublisherController: UITableViewDataSource, U
 extension ClassicTableViewManagedByPublisherController: TBLClassicPageDelegate {
     func classicUnit(_ classicUnit: UIView!, didLoadOrResizePlacementName placementName: String!, height: CGFloat, placementType: PlacementType) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
-        if placementName == Constants.placementBelowArticle{
+        if placementName == Constants.placementBelowArticle {
             taboolaWidgetPlacement?.frame = CGRect(x: 0,y: 0,width: self.view.frame.size.width,height: taboolaWidgetPlacement?.placementHeight ?? 200)
         }
-        else{
+        else {
             taboolaFeedPlacement?.frame = CGRect(x: taboolaFeedPlacement?.frame.origin.x ?? 0,y: taboolaFeedPlacement?.frame.origin.y ?? 0,width: self.view.frame.size.width,height: taboolaFeedPlacement?.placementHeight ?? 200)
         }
         self.tableView.beginUpdates()
@@ -119,6 +112,6 @@ extension ClassicTableViewManagedByPublisherController: TBLClassicPageDelegate {
     }
     
     func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool) -> Bool {
-        return true;
+        return true
     }
 }

@@ -2,8 +2,7 @@
 //  ClassicCollectionViewManagedByPublisherController.swift
 //  TaboolaSDKExampleV3
 //
-//  Created by Liad Elidan on 11/05/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 import UIKit
@@ -20,7 +19,9 @@ class ClassicCollectionViewManagedByPublisherController: UIViewController {
     // TBLClassicUnit object represnting Widget/Feed
     var taboolaWidgetPlacement: TBLClassicUnit?
     var taboolaFeedPlacement: TBLClassicUnit?
-    
+
+    fileprivate let taboolaCellIdentifier = "TaboolaCollectionViewCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -28,13 +29,13 @@ class ClassicCollectionViewManagedByPublisherController: UIViewController {
         
         taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: Constants.placementBelowArticle, mode: Constants.widgetMode_1x4)
         
-        if let taboolaWidgetPlacement = taboolaWidgetPlacement{
+        if let taboolaWidgetPlacement = taboolaWidgetPlacement {
             taboolaWidgetPlacement.fetchContent()
         }
         
         taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: Constants.placementFeedWithoutVideo, mode: Constants.thumbsFeedMode)
 
-        if let taboolaFeedPlacement = taboolaFeedPlacement{
+        if let taboolaFeedPlacement = taboolaFeedPlacement {
             taboolaFeedPlacement.fetchContent()
         }
         
@@ -47,39 +48,32 @@ extension ClassicCollectionViewManagedByPublisherController: UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case Constants.taboolaWidgetSection:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TaboolaCollectionViewCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: taboolaCellIdentifier, for: indexPath)
             clearTaboolaInReusedCell(cell: cell)
-            if let taboolaWidgetPlacement = taboolaWidgetPlacement{
+            if let taboolaWidgetPlacement = taboolaWidgetPlacement {
                 cell.addSubview(taboolaWidgetPlacement)
             }
             return cell
         case Constants.taboolaFeedSection:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TaboolaCollectionViewCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: taboolaCellIdentifier, for: indexPath)
             clearTaboolaInReusedCell(cell: cell)
-            if let taboolaFeedPlacement = taboolaFeedPlacement{
+            if let taboolaFeedPlacement = taboolaFeedPlacement {
                 cell.addSubview(taboolaFeedPlacement)
             }
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomCell", for: indexPath)
-            cell.backgroundColor = random()
+            cell.backgroundColor = UIColor.random()
             return cell
         }
     }
     
-    func clearTaboolaInReusedCell(cell :UICollectionViewCell){
-        for view in cell.subviews{
+    func clearTaboolaInReusedCell(cell: UICollectionViewCell) {
+        for view in cell.subviews {
             view.removeFromSuperview()
         }
     }
-    
-    func random() -> UIColor {
-        return UIColor(red: .random(in: 0...1),
-                       green: .random(in: 0...1),
-                       blue: .random(in: 0...1),
-                       alpha: 1.0)
-    }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Constants.totalSections
     }
@@ -95,7 +89,7 @@ extension ClassicCollectionViewManagedByPublisherController: UICollectionViewDat
         case Constants.taboolaFeedSection:
             return CGSize(width: self.view.frame.size.width, height: taboolaFeedPlacement?.placementHeight ?? 200)
         default:
-            return CGSize(width: self.view.frame.size.width, height: 200);
+            return CGSize(width: self.view.frame.size.width, height: 200)
         }
     }
 }
@@ -103,10 +97,10 @@ extension ClassicCollectionViewManagedByPublisherController: UICollectionViewDat
 extension ClassicCollectionViewManagedByPublisherController: TBLClassicPageDelegate {
     func classicUnit(_ classicUnit: UIView!, didLoadOrResizePlacementName placementName: String!, height: CGFloat, placementType: PlacementType) {
         print("Placement name: \(String(describing: placementName)) has been loaded with height: \(height)")
-        if placementName == Constants.placementBelowArticle{
+        if placementName == Constants.placementBelowArticle {
             taboolaWidgetPlacement?.frame = CGRect(x: 0,y: 0,width: self.view.frame.size.width,height: taboolaWidgetPlacement?.placementHeight ?? 200)
         }
-        else{
+        else {
             taboolaFeedPlacement?.frame = CGRect(x: taboolaFeedPlacement?.frame.origin.x ?? 0,y: taboolaFeedPlacement?.frame.origin.y ?? 0,width: self.view.frame.size.width,height: taboolaFeedPlacement?.placementHeight ?? 200)
         }
         self.collectionView.collectionViewLayout.invalidateLayout()
@@ -117,6 +111,6 @@ extension ClassicCollectionViewManagedByPublisherController: TBLClassicPageDeleg
     }
     
     func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool) -> Bool {
-        return true;
+        return true
     }
 }

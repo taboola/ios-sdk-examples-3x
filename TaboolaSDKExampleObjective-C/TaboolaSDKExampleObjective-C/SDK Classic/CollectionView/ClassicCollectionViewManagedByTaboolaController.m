@@ -2,8 +2,7 @@
 //  ClassicCollectionViewManagedByTaboolaController.m
 //  TaboolaSDKExampleObjective-C
 //
-//  Created by Liad Elidan on 17/05/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 #import "ClassicCollectionViewManagedByTaboolaController.h"
@@ -18,7 +17,7 @@
 
 // TBLClassicPage holds Taboola Widgets/Feed for a specific view
 @property (nonatomic, strong) TBLClassicPage *classicPage;
-// TBLClassicUnit object represnting Widget/Feed
+// TBLClassicUnit object representing Widget/Feed
 @property (nonatomic, strong) TBLClassicUnit *taboolaWidgetPlacement;
 @property (nonatomic, strong) TBLClassicUnit *taboolaFeedPlacement;
 
@@ -32,7 +31,7 @@
     [self taboolaInit];
 }
 
--(void)taboolaInit {
+- (void)taboolaInit {
     _classicPage = [[TBLClassicPage alloc]initWithPageType:@"article" pageUrl:@"http://www.example.com" delegate:self scrollView:_collectionViewManagedByTaboola];
     
     _taboolaWidgetPlacement = [_classicPage createUnitWithPlacementName:@"Below Article" mode:@"alternating-widget-without-video-1x4"];
@@ -46,9 +45,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == taboolaWidgetSection) {
+        // return a cell managed by Taboola SDK
         return [_taboolaWidgetPlacement collectionView:collectionView cellForItemAtIndexPath:indexPath withBackground:nil];
     }
     else if (indexPath.section == taboolaFeedSection) {
+        // return a cell managed by Taboola SDK
         return [_taboolaFeedPlacement collectionView:collectionView cellForItemAtIndexPath:indexPath withBackground:nil];
     }
     else {
@@ -66,22 +67,24 @@
     return 1;
 }
 
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == taboolaWidgetSection) {
+        // return a widget cell size managed by Taboola SDK
         return [_taboolaWidgetPlacement collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath withUIInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
     } else if (indexPath.section == taboolaFeedSection) {
+        // return a feed cell size managed by Taboola SDK
         return [_taboolaFeedPlacement collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath withUIInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
     }
     return CGSizeMake(self.view.frame.size.width, 200);
 }
 
--(void)dealloc {
+- (void)dealloc {
     [self.classicPage reset];
 }
 
 #pragma mark - TBLClassicPageDelegate
 
-- (void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType{
+- (void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType {
     NSLog(@"%@", placementName);
 }
 

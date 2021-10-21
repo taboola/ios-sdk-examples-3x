@@ -2,8 +2,7 @@
 //  ClassicTableViewManagedByPublisherController.m
 //  TaboolaSDKExampleObjective-C
 //
-//  Created by Liad Elidan on 02/06/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 #import "ClassicTableViewManagedByPublisherController.h"
@@ -31,7 +30,7 @@
     [self taboolaInit];
 }
 
--(void)taboolaInit {
+- (void)taboolaInit {
     _classicPage = [[TBLClassicPage alloc]initWithPageType:@"article" pageUrl:@"http://www.example.com" delegate:self scrollView:_tableView];
     
     _taboolaWidgetPlacement = [_classicPage createUnitWithPlacementName:@"Below Article" mode:@"alternating-widget-without-video-1x4"];
@@ -43,7 +42,7 @@
 
 #pragma mark - UITableViewDatasource
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == taboolaWidgetSection){
         UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"TaboolaTableViewCell" forIndexPath:indexPath];
         [self clearTaboolaInReusedCell:cell];
@@ -63,7 +62,7 @@
     }
 }
 
--(void)clearTaboolaInReusedCell:(UITableViewCell*)cell {
+- (void)clearTaboolaInReusedCell:(UITableViewCell*)cell {
     for (UIView *view in [cell.contentView subviews]) {
         [view removeFromSuperview];
     }
@@ -87,13 +86,13 @@
         return 200;
 }
 
--(void)dealloc {
+- (void)dealloc {
     [self.classicPage reset];
 }
 
 #pragma mark - TBLClassicPageDelegate
 
--(void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height {
+- (void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height {
     NSLog(@"%@", placementName);
     
     if ([placementName containsString:widgetPlacement]) {

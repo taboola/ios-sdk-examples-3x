@@ -2,8 +2,7 @@
 //  WebViewController.m
 //  TaboolaSDKExampleObjective-C
 //
-//  Created by Liad Elidan on 24/05/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 #import "WebViewController.h"
@@ -25,7 +24,7 @@
 
 @implementation WebViewController
 
--(void)viewDidLoad{
+- (void)viewDidLoad {
     [super viewDidLoad];
     _webView = [[WKWebView alloc] initWithFrame:CGRectZero];
     
@@ -44,7 +43,7 @@
     [webView loadHTMLString:appHtml baseURL:[NSURL URLWithString:@"https://cdn.taboola.com/mobile-sdk/init/"]];	
 }
 
--(void)webView:(UIView *)webView didLoadPlacementNamed:(NSString *)placementName withHeight:(CGFloat)height{
+- (void)webView:(UIView *)webView didLoadPlacementNamed:(NSString *)placementName withHeight:(CGFloat)height {
     NSLog(@"%@", placementName);
 }
 

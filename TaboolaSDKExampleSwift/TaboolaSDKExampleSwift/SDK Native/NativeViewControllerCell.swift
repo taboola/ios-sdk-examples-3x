@@ -2,8 +2,7 @@
 //  NativeViewControllerCell.swift
 //  TaboolaSDKExampleSwift
 //
-//  Created by Karen Shaham Palman on 11/07/2021.
-//  Copyright © 2021 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 import UIKit

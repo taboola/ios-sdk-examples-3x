@@ -2,8 +2,7 @@
 //  NativeBannerViewController.h
 //  TaboolaSDKExampleObjective-C
 //
-//  Created by Liad Elidan on 01/06/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -2,8 +2,7 @@
 //  NativeBannerViewController.m
 //  TaboolaSDKExampleObjective-C
 //
-//  Created by Liad Elidan on 01/06/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 #import "NativeBannerViewController.h"
@@ -32,7 +31,7 @@
     [self taboolaInit];
 }
 
--(void)taboolaInit {
+- (void)taboolaInit {
     TBLNativePage *nativePage = [[TBLNativePage alloc]initWithDelegate:self sourceType:SourceTypeText pageUrl:@"http://www.example.com"];
     
     TBLNativeUnit *taboolaUnit = [nativePage createUnitWithPlacement:@"Below Article" numberOfItems:1];
@@ -52,24 +51,26 @@
             }
         }
     } onFailure:^(NSError *error) {
-        
+        if (error) {
+            NSLog(@"error: %@",error.description);
+        }
     }];
 }
 
 #pragma mark - UITableViewDatasource
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextCell" forIndexPath:indexPath];
-    cell.textLabel.text = nativeText;
-    return cell;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return totalRowsNative;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextCell" forIndexPath:indexPath];
+    cell.textLabel.text = nativeText;
+    return cell;
 }
 
 #pragma mark - TBLNativePageDelegate

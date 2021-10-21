@@ -2,8 +2,7 @@
 //  ClassicConstraintsScrollViewController.m
 //  TaboolaSDKExampleObjective-C
 //
-//  Created by Liad Elidan on 09/07/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 #import "ClassicConstraintsScrollViewController.h"
@@ -32,7 +31,7 @@
     [self taboolaInit];
 }
 
--(void)taboolaInit {
+- (void)taboolaInit {
     _classicPage = [[TBLClassicPage alloc]initWithPageType:@"article" pageUrl:@"http://www.example.com" delegate:self scrollView:_scrollView];
     
     _taboolaWidgetPlacement = [_classicPage createUnitWithPlacementName:@"Above Article" mode:@"alternating-widget-without-video-1x1"];
@@ -46,7 +45,7 @@
     [self setTaboolaConstraintsToSuper];
 }
 
--(void)setTaboolaConstraintsToSuper {
+- (void)setTaboolaConstraintsToSuper {
     [_top addSubview:_taboolaWidgetPlacement];
     _taboolaWidgetPlacement.translatesAutoresizingMaskIntoConstraints = NO;
     [_taboolaWidgetPlacement.topAnchor constraintEqualToAnchor:_top.topAnchor constant:0].active = YES;
@@ -69,7 +68,7 @@
 
 #pragma mark - TBLClassicPageDelegate
 
--(void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType{
+- (void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType {
     NSLog(@"%@", placementName);
 }
 

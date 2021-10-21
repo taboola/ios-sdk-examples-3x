@@ -2,8 +2,7 @@
 //  ClassicCollectionViewManagedByPublisherController.m
 //  TaboolaSDKExampleObjective-C
 //
-//  Created by Liad Elidan on 17/05/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 #import "ClassicCollectionViewManagedByPublisherController.h"
@@ -30,7 +29,7 @@
      [self taboolaInit];
 }
 
--(void)taboolaInit {
+- (void)taboolaInit {
     _classicPage = [[TBLClassicPage alloc]initWithPageType:@"article" pageUrl:@"http://www.example.com" delegate:self scrollView:_collectionView];
     
     _taboolaWidgetPlacement = [_classicPage createUnitWithPlacementName:@"Below Article" mode:@"alternating-widget-without-video-1x4"];
@@ -61,7 +60,7 @@
     
 }
 
--(void)clearTaboolaInReusedCell:(UICollectionViewCell*)cell {
+- (void)clearTaboolaInReusedCell:(UICollectionViewCell*)cell {
     for (UIView *view in [cell.contentView subviews]) {
         [view removeFromSuperview];
     }
@@ -75,7 +74,7 @@
     return 1;
 }
 
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == taboolaWidgetSection) {
         return CGSizeMake(self.view.frame.size.width, _taboolaWidgetPlacement.placementHeight);
     }
@@ -85,12 +84,12 @@
     return CGSizeMake(self.view.frame.size.width, 200);
 }
 
--(void)dealloc {
+- (void)dealloc {
     [self.classicPage reset];
 }
 
 #pragma mark - TBLClassicPageDelegate
--(void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType{
+- (void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height placementType:(PlacementType)placementType {
     NSLog(@"%@", placementName);
     
     if ([placementName containsString:widgetPlacement]) {

@@ -2,8 +2,7 @@
 //  ClassicConstraintsScrollViewController.swift
 //  TaboolaSDKExampleV3
 //
-//  Created by Liad Elidan on 22/04/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 import UIKit
@@ -28,18 +27,18 @@ class ClassicConstraintsScrollViewController: UIViewController {
         taboolaInit()
     }
     
-    func taboolaInit(){
+    func taboolaInit() {
         classicPage = TBLClassicPage.init(pageType: Constants.pageTypeArticle, pageUrl: Constants.pageUrl, delegate: self, scrollView: scrollView)
         
         taboolaWidgetPlacement = classicPage?.createUnit(withPlacementName: "Above Article", mode: Constants.widgetMode_1x1)
         
         taboolaFeedPlacement = classicPage?.createUnit(withPlacementName: Constants.placementFeedWithoutVideo, mode: Constants.thumbsFeedMode)
 
-        if let taboolaWidgetPlacement = taboolaWidgetPlacement{
+        if let taboolaWidgetPlacement = taboolaWidgetPlacement {
             taboolaWidgetPlacement.fetchContent()
         }
         
-        if let taboolaFeedPlacement = taboolaFeedPlacement{
+        if let taboolaFeedPlacement = taboolaFeedPlacement {
             taboolaFeedPlacement.clipsToBounds = true
             taboolaFeedPlacement.fetchContent()
         }
@@ -78,6 +77,6 @@ extension ClassicConstraintsScrollViewController: TBLClassicPageDelegate {
     }
     
     func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool) -> Bool {
-        return true;
+        return true
     }
 }

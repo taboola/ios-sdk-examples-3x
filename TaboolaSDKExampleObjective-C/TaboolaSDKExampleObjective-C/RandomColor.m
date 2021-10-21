@@ -2,8 +2,7 @@
 //  RandomColor.m
 //  TaboolaSDKExampleObjective-C
 //
-//  Created by Liad Elidan on 17/05/2020.
-//  Copyright © 2020 Liad Elidan. All rights reserved.
+//  Copyright © 2020 Taboola. All rights reserved.
 //
 
 #import "RandomColor.h"

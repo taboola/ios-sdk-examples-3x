@@ -57,4 +57,21 @@
     return YES;
 }
 
+- (BOOL)onItemClick:(NSString *)placementName
+         withItemId:(NSString *)itemId
+       withClickUrl:(NSString *)clickUrl
+          isOrganic:(BOOL)organic
+         customData:(NSDictionary *)customData {
+    // Return 'YES' for Taboola SDK to handle the click event (default behavior).
+    // Return 'NO' to handle the click event yourself. (Applicable for organic content only (including Audience Exchange items).)
+    
+    // You can identify Audience Exchange items by checking the customData dictionary
+    if (customData[@"isAudienceExchange"] && [customData[@"isAudienceExchange"] boolValue]) {
+        // Handle Audience Exchange items
+        return NO;
+    }
+    
+    return YES;
+}
+
 @end

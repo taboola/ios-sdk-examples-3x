@@ -101,7 +101,7 @@ extension ClassicCollectionViewManagedByTaboolaController: TBLClassicPageDelegat
         print(error as Any)
     }
     
-    func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool) -> Bool {
-        return false
+    func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool, customData: [String:Any]) -> Bool {
+        return true
     }
 }

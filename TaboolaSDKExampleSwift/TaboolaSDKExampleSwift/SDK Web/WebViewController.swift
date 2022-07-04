@@ -53,4 +53,21 @@ extension WebViewController: TBLWebPageDelegate {
         // Return 'false' to handle the click event yourself. (Applicable for organic content only.)
         return true
     }
+    
+    func webView(_ webView: WKWebView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool, customData: [String:Any]) -> Bool {
+        // Return 'true' for Taboola SDK to handle the click event (default behavior).
+        // Return 'NO' to handle the click event yourself. (Applicable for organic content only (including Audience Exchange items).)
+        
+        // You can identify Audience Exchange items by checking the customData dictionary
+        // Note that you will also need to pass in an Extra Property flag called allowAudienceExchangeClickOverride with the value of true
+        if let isAudienceExchange = customData["isAudienceExchange"] as? Bool {
+            if isAudienceExchange == true {
+                // Handle Audience Exchange items
+                return false
+            }
+        }
+
+        
+        return true
+    }
 }

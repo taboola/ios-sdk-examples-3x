@@ -54,15 +54,6 @@
 - (BOOL)webView:(WKWebView *)webView didClickPlacementName:(NSString *)placementName
          itemId:(NSString *)itemId
        clickUrl:(NSString *)clickUrl
-      isOrganic:(BOOL)organic {
-    // Return 'YES' for Taboola SDK to handle the click event (default behavior).
-    // Return 'NO' to handle the click event yourself. (Applicable for organic content only.)
-    return YES;
-}
-
-- (BOOL)webView:(WKWebView *)webView didClickPlacementName:(NSString *)placementName
-         itemId:(NSString *)itemId
-       clickUrl:(NSString *)clickUrl
       isOrganic:(BOOL)organic
      customData:(NSDictionary *)customData {
     // Return 'YES' for Taboola SDK to handle the click event (default behavior).

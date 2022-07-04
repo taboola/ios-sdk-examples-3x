@@ -69,6 +69,7 @@
     // Return 'NO' to handle the click event yourself. (Applicable for organic content only (including Audience Exchange items).)
     
     // You can identify Audience Exchange items by checking the customData dictionary
+    // Note that you will also need to pass in an Extra Property flag called allowAudienceExchangeClickOverride with the value of true
     if (customData[@"isAudienceExchange"] && [customData[@"isAudienceExchange"] boolValue]) {
         // Handle Audience Exchange items
         return NO;

@@ -25,6 +25,8 @@
 		72D70006244DD0B0004C967C /* ClassicTableViewManagedByTaboolaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D70005244DD0B0004C967C /* ClassicTableViewManagedByTaboolaController.swift */; };
 		72D7000A24503D0D004C967C /* ClassicFrameScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D7000924503D0D004C967C /* ClassicFrameScrollViewController.swift */; };
 		91BA97C731448D934E9E2A2A /* Pods_TaboolaSDKExampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E3DFE1B76160DCA44AE917 /* Pods_TaboolaSDKExampleSwift.framework */; };
+		BAB379CE28C610C1007E7007 /* SampleContinuousScrollPage.html in Resources */ = {isa = PBXBuildFile; fileRef = BAB379CD28C610C1007E7007 /* SampleContinuousScrollPage.html */; };
+		BAB379D228C61237007E7007 /* ContinuousScrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB379D128C61237007E7007 /* ContinuousScrollController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		72BB672924BC8B2800D5A9D4 /* ClassicConstraintsScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicConstraintsScrollViewController.swift; sourceTree = "<group>"; };
 		72D70005244DD0B0004C967C /* ClassicTableViewManagedByTaboolaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicTableViewManagedByTaboolaController.swift; sourceTree = "<group>"; };
 		72D7000924503D0D004C967C /* ClassicFrameScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicFrameScrollViewController.swift; sourceTree = "<group>"; };
+		BAB379CD28C610C1007E7007 /* SampleContinuousScrollPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SampleContinuousScrollPage.html; sourceTree = "<group>"; };
+		BAB379D128C61237007E7007 /* ContinuousScrollController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousScrollController.swift; sourceTree = "<group>"; };
 		C0AF67F2E6E0550FEC48A220 /* Pods-TaboolaSDKExampleV3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaboolaSDKExampleV3.debug.xcconfig"; path = "Target Support Files/Pods-TaboolaSDKExampleV3/Pods-TaboolaSDKExampleV3.debug.xcconfig"; sourceTree = "<group>"; };
 		CD964DAFFF94D17B2ACDB84C /* Pods-TaboolaSDKExampleV3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaboolaSDKExampleV3.release.xcconfig"; path = "Target Support Files/Pods-TaboolaSDKExampleV3/Pods-TaboolaSDKExampleV3.release.xcconfig"; sourceTree = "<group>"; };
 		D4BB3D3BE6D8592311A73F29 /* Pods-TaboolaSDKExampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaboolaSDKExampleSwift.debug.xcconfig"; path = "Target Support Files/Pods-TaboolaSDKExampleSwift/Pods-TaboolaSDKExampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				725461B52427A4D500660672 /* WebViewController.swift */,
+				BAB379D128C61237007E7007 /* ContinuousScrollController.swift */,
 				725461B72427B58200660672 /* SampleHTMLPage.html */,
+				BAB379CD28C610C1007E7007 /* SampleContinuousScrollPage.html */,
 			);
 			path = "SDK Web";
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				722CA700241792850022043F /* LaunchScreen.storyboard in Resources */,
+				BAB379CE28C610C1007E7007 /* SampleContinuousScrollPage.html in Resources */,
 				722CA6FD241792850022043F /* Assets.xcassets in Resources */,
 				26C569F4269B2A8800423171 /* NativeViewControllerCell.xib in Resources */,
 				725461B82427B58200660672 /* SampleHTMLPage.html in Resources */,
@@ -315,6 +322,7 @@
 				722CA6F8241792840022043F /* MainViewController.swift in Sources */,
 				72D7000A24503D0D004C967C /* ClassicFrameScrollViewController.swift in Sources */,
 				72BB672A24BC8B2800D5A9D4 /* ClassicConstraintsScrollViewController.swift in Sources */,
+				BAB379D228C61237007E7007 /* ContinuousScrollController.swift in Sources */,
 				26C569F6269B2ADD00423171 /* NativeViewControllerCell.swift in Sources */,
 				72D70006244DD0B0004C967C /* ClassicTableViewManagedByTaboolaController.swift in Sources */,
 				725461B62427A4D500660672 /* WebViewController.swift in Sources */,

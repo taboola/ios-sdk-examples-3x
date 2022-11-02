@@ -54,7 +54,7 @@ extension WebViewController: TBLWebPageDelegate {
         return true
     }
     
-    func webView(_ webView: WKWebView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool, customData: [String:Any]) -> Bool {
+    func webView(_ webView: WKWebView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool, customData: [AnyHashable : Any]!) -> Bool{
         // Return 'true' for Taboola SDK to handle the click event (default behavior).
         // Return 'NO' to handle the click event yourself. (Applicable for organic content only (including Audience Exchange items).)
         

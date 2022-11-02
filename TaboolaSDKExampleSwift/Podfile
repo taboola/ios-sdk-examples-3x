@@ -4,7 +4,7 @@
 target 'TaboolaSDKExampleSwift' do
   use_frameworks!
   
-  pod 'TaboolaSDK', '3.8.0'
+  pod 'TaboolaSDK', '3.8.3'
 
   end
 

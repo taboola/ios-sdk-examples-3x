@@ -76,7 +76,7 @@ extension ClassicConstraintsScrollViewController: TBLClassicPageDelegate {
         print(error as Any)
     }
     
-    func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool, customData: [String:Any]) -> Bool {
+    func classicUnit(_ classicUnit: UIView!, didClickPlacementName placementName: String!, itemId: String!, clickUrl: String!, isOrganic organic: Bool, customData: [AnyHashable : Any]!) -> Bool {
         return true
     }
 }

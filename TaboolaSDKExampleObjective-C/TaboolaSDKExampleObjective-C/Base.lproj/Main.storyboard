@@ -442,6 +442,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="6wy-hu-kHv" id="TF9-Yk-UEF"/>
+                                    <outlet property="delegate" destination="6wy-hu-kHv" id="cF0-wV-h3W"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jcs-K4-6iZ"/>

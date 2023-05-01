@@ -20,6 +20,9 @@ class ClassicTableViewManagedByTaboolaController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.estimatedRowHeight = 1.0
+        self.tableView.rowHeight = UITableView.automaticDimension
+
         taboolaInit()
     }
     
@@ -90,6 +93,10 @@ extension ClassicTableViewManagedByTaboolaController: UITableViewDataSource, UIT
             }
         }
         return widgetHeight
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.tableView(tableView, heightForRowAt: indexPath)
     }
 }
 

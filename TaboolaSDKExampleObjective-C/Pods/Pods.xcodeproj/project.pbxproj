@@ -16,6 +16,7 @@
 				AFF6AC39321435D265703123A6E34F05 /* PBXTargetDependency */,
 			);
 			name = TaboolaSDK;
+			productName = TaboolaSDK;
 		};
 /* End PBXAggregateTarget section */
 
@@ -48,28 +49,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07D07E2EDC8DBF2F15049E3A988DAA69 /* template.html */ = {isa = PBXFileReference; includeInIndex = 1; name = template.html; path = TaboolaSDK.framework/TaboolaSDKResource.bundle/template.html; sourceTree = "<group>"; };
+		07D07E2EDC8DBF2F15049E3A988DAA69 /* template.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = template.html; path = TaboolaSDK.framework/TaboolaSDKResource.bundle/template.html; sourceTree = "<group>"; };
 		249289A9AF98D45FDEA322D0315034B3 /* Pods-TaboolaSDKExampleObjective-C-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TaboolaSDKExampleObjective-C-resources.sh"; sourceTree = "<group>"; };
 		2A84220033D50415E6273ADD9430B4E6 /* Pods-TaboolaSDKExampleObjective-C.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TaboolaSDKExampleObjective-C.debug.xcconfig"; sourceTree = "<group>"; };
 		2C7FB67AF2525455EF335058618BBE6F /* Pods-TaboolaSDKExampleObjective-C-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TaboolaSDKExampleObjective-C-umbrella.h"; sourceTree = "<group>"; };
 		356A8A6B48D6251E9C67933C4AFD3882 /* Pods-TaboolaSDKExampleObjective-C.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TaboolaSDKExampleObjective-C.modulemap"; sourceTree = "<group>"; };
-		386F0B19A67CB626751946939F0C03D4 /* TBLTableCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; name = TBLTableCell.nib; path = TaboolaSDK.framework/TaboolaSDKResource.bundle/TBLTableCell.nib; sourceTree = "<group>"; };
+		386F0B19A67CB626751946939F0C03D4 /* TBLTableCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TBLTableCell.nib; path = TaboolaSDK.framework/TaboolaSDKResource.bundle/TBLTableCell.nib; sourceTree = "<group>"; };
 		38E923E3BF8E313A2F74703AC693842F /* Pods-TaboolaSDKExampleObjective-C-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TaboolaSDKExampleObjective-C-dummy.m"; sourceTree = "<group>"; };
 		39E04F2A062AA0580AE66A678B32A3F1 /* TaboolaSDKResource-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "TaboolaSDKResource-Info.plist"; path = "TaboolaSDK.framework/TaboolaSDKResource.bundle/TaboolaSDKResource-Info.plist"; sourceTree = "<group>"; };
 		3D1CDDA847363D19DFB78DFF4750E390 /* Pods-TaboolaSDKExampleObjective-C-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TaboolaSDKExampleObjective-C-frameworks.sh"; sourceTree = "<group>"; };
 		59B3AF8737E3EA35AC9C59AF52C12036 /* Pods-TaboolaSDKExampleObjective-C-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TaboolaSDKExampleObjective-C-acknowledgements.plist"; sourceTree = "<group>"; };
-		606F61D29F6E652D2A4CB362646B4FBB /* TaboolaSDKResource.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TaboolaSDKResource.bundle; path = "TaboolaSDK-TaboolaSDKResource.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		606F61D29F6E652D2A4CB362646B4FBB /* TaboolaSDKResource.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaboolaSDKResource.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B77F2BF5E72ED1E07A7CDA8B78BB27 /* Pods-TaboolaSDKExampleObjective-C.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TaboolaSDKExampleObjective-C.release.xcconfig"; sourceTree = "<group>"; };
-		68AF64CC0D37FC2B528AD8A1B2CBB713 /* TBLStoriesCollectionViewCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; name = TBLStoriesCollectionViewCell.nib; path = TaboolaSDK.framework/TaboolaSDKResource.bundle/TBLStoriesCollectionViewCell.nib; sourceTree = "<group>"; };
+		68AF64CC0D37FC2B528AD8A1B2CBB713 /* TBLStoriesCollectionViewCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.nib; name = TBLStoriesCollectionViewCell.nib; path = TaboolaSDK.framework/TaboolaSDKResource.bundle/TBLStoriesCollectionViewCell.nib; sourceTree = "<group>"; };
 		6FE24B6FC4C1DAA51EAC3D7B13F6DFC9 /* Pods-TaboolaSDKExampleObjective-C-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TaboolaSDKExampleObjective-C-acknowledgements.markdown"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7875A23BC33C2FB0931584027E7CDA7C /* Pods-TaboolaSDKExampleObjective-C-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TaboolaSDKExampleObjective-C-Info.plist"; sourceTree = "<group>"; };
 		7AB9F8DBEE57768B9417DB5AEA2EA990 /* TaboolaSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TaboolaSDK.debug.xcconfig; sourceTree = "<group>"; };
 		819B2691415748B7D5E398B201E051FC /* ResourceBundle-TaboolaSDKResource-TaboolaSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TaboolaSDKResource-TaboolaSDK-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BDECE675E9FBE45C491502983C314A13 /* TBLCollectionCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; name = TBLCollectionCell.nib; path = TaboolaSDK.framework/TaboolaSDKResource.bundle/TBLCollectionCell.nib; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BDECE675E9FBE45C491502983C314A13 /* TBLCollectionCell.nib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = TBLCollectionCell.nib; path = TaboolaSDK.framework/TaboolaSDKResource.bundle/TBLCollectionCell.nib; sourceTree = "<group>"; };
 		C84762BBB190B3F928F501583F2756FF /* TaboolaSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TaboolaSDK.framework; sourceTree = "<group>"; };
-		CDD48BF24D87148A0E649A6699543E87 /* Pods_TaboolaSDKExampleObjective_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TaboolaSDKExampleObjective_C.framework; path = "Pods-TaboolaSDKExampleObjective-C.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD48BF24D87148A0E649A6699543E87 /* Pods_TaboolaSDKExampleObjective_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaboolaSDKExampleObjective_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0B237C83ECA4B07A3406D5A805BCE3 /* TaboolaSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TaboolaSDK.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,7 +171,6 @@
 				0A1727C5558D7C37662BE68754A10686 /* Resources */,
 				ECD93093F368FBBC6BA9D3B413D04C4A /* Support Files */,
 			);
-			name = TaboolaSDK;
 			path = TaboolaSDK;
 			sourceTree = "<group>";
 		};
@@ -344,6 +344,7 @@
 			baseConfigurationReference = 7AB9F8DBEE57768B9417DB5AEA2EA990 /* TaboolaSDK.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TaboolaSDK";
+				DEVELOPMENT_TEAM = ZZMSXYL4ND;
 				IBSC_MODULE = TaboolaSDK;
 				INFOPLIST_FILE = "Target Support Files/TaboolaSDK/ResourceBundle-TaboolaSDKResource-TaboolaSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -360,6 +361,7 @@
 			baseConfigurationReference = DC0B237C83ECA4B07A3406D5A805BCE3 /* TaboolaSDK.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TaboolaSDK";
+				DEVELOPMENT_TEAM = ZZMSXYL4ND;
 				IBSC_MODULE = TaboolaSDK;
 				INFOPLIST_FILE = "Target Support Files/TaboolaSDK/ResourceBundle-TaboolaSDKResource-TaboolaSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

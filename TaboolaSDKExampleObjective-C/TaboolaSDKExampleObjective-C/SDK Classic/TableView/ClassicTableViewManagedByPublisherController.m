@@ -92,7 +92,7 @@
 
 #pragma mark - TBLClassicPageDelegate
 
-- (void)taboolaView:(UIView *)taboolaView didLoadOrResizePlacement:(NSString *)placementName withHeight:(CGFloat)height {
+- (void)classicUnit:(UIView *)classicUnit didLoadOrResizePlacementName:(NSString *)placementName height:(CGFloat)height placementType:(PlacementType)placementType{
     NSLog(@"%@", placementName);
     
     if ([placementName containsString:widgetPlacement]) {
@@ -104,7 +104,7 @@
     [self.tableView endUpdates];
 }
 
-- (void)taboolaView:(UIView *)taboolaView didFailToLoadPlacementNamed:(NSString *)placementName withErrorMessage:(NSString *)error {
+- (void)classicUnit:(UIView *)classicUnit didFailToLoadPlacementName:(NSString *)placementName errorMessage:(NSString *)error{
     NSLog(@"%@", error);
 }
 

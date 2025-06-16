@@ -1,0 +1,15 @@
+{
+  "originHash" : "da5661a75aa1b4527edc60e4d7b308b496b5ecf973a422884582f8dc56ad1001",
+  "pins" : [
+    {
+      "identity" : "taboola-swift-ui-umbrella",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/taboola/taboola-swift-ui-umbrella",
+      "state" : {
+        "revision" : "c1dae2d929db8c03881295e261ae9c7415e01bfb",
+        "version" : "3.8.41"
+      }
+    }
+  ],
+  "version" : 3
+}

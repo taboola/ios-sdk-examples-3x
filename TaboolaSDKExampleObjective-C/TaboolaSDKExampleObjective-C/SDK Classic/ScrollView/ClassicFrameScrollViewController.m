@@ -45,7 +45,7 @@
 - (void)taboolaInit {
     _classicPage = [[TBLClassicPage alloc]initWithPageType:@"article" pageUrl:@"http://www.example.com" delegate:self scrollView:_scrollView];
     
-    _taboolaFeedPlacement = [_classicPage createUnitWithPlacementName:@"Feed without video" mode:@"thumbs-feed-01 video"];
+    _taboolaFeedPlacement = [_classicPage createUnitWithPlacementName:placementFeddWithoutVideo mode:modeFeedVideo];
     [_taboolaFeedPlacement setFrame:CGRectMake(0, _topText.frame.size.height, self.view.frame.size.width, 200)];
     [_scrollView addSubview:_taboolaFeedPlacement];
 

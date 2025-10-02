@@ -6,8 +6,8 @@
 //
 
 #import "ClassicConstraintsScrollViewController.h"
-#import <TaboolaSDK/TaboolaSDK.h>
 #import "RandomColor.h"
+#import "Constants.h"
 
 @interface ClassicConstraintsScrollViewController () <TBLClassicPageDelegate>
 
@@ -16,8 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIView *top;
 @property (weak, nonatomic) IBOutlet UIView *bottom;
 
-// TBLClassicPage holds Taboola Widgets/Feed for a specific view
-@property (nonatomic, strong) TBLClassicPage* classicPage;
 // TBLClassicUnit object represnting Widget/Feed
 @property (nonatomic, strong) TBLClassicUnit* taboolaWidgetPlacement;
 @property (nonatomic, strong) TBLClassicUnit* taboolaFeedPlacement;
@@ -34,9 +32,9 @@
 - (void)taboolaInit {
     _classicPage = [[TBLClassicPage alloc]initWithPageType:@"article" pageUrl:@"http://www.example.com" delegate:self scrollView:_scrollView];
     
-    _taboolaWidgetPlacement = [_classicPage createUnitWithPlacementName:@"Above Article" mode:@"alternating-widget-without-video-1x1"];
+    _taboolaWidgetPlacement = [_classicPage createUnitWithPlacementName:placementAboveArticle mode:mode1x4];
     
-    _taboolaFeedPlacement = [_classicPage createUnitWithPlacementName:@"Feed without video" mode:@"thumbs-feed-01 video"];
+    _taboolaFeedPlacement = [_classicPage createUnitWithPlacementName:placementFeddWithoutVideo mode:modeFeedVideo];
     _taboolaFeedPlacement.clipsToBounds = YES;
 
     [_taboolaWidgetPlacement fetchContent];

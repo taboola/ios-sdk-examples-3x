@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l7X-cZ-pUY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l7X-cZ-pUY">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -436,7 +436,7 @@
                                 <rect key="frame" x="50" y="371" width="314" height="441"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXm-mp-xPZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="140.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="102.66666666666667"/>
                                         <color key="backgroundColor" red="0.084904335440000006" green="0.29671934249999998" blue="0.57257765530000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                         <state key="normal" title="CollectionView">
@@ -453,7 +453,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Uy-xR-5d2">
-                                        <rect key="frame" x="0.0" y="150.33333333333337" width="314" height="140.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="112.66666666666669" width="314" height="103"/>
                                         <color key="backgroundColor" red="0.084904335440000006" green="0.29671934249999998" blue="0.57257765530000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <state key="normal" title="TableView">
@@ -470,7 +470,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-MC-jmi">
-                                        <rect key="frame" x="0.0" y="300.66666666666663" width="314" height="140.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="225.6666666666666" width="314" height="102.66666666666666"/>
                                         <color key="backgroundColor" red="0.084904335440000006" green="0.29671934249999998" blue="0.57257765530000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <state key="normal" title="ScrollView">
@@ -484,6 +484,23 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="SBu-00-KdC" kind="show" id="ABJ-Ke-dvN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYC-5D-evT">
+                                        <rect key="frame" x="0.0" y="338.33333333333337" width="314" height="102.66666666666669"/>
+                                        <color key="backgroundColor" red="0.084904335440000006" green="0.29671934249999998" blue="0.57257765530000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <state key="normal" title="Explore More">
+                                            <color key="titleColor" systemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.makeBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="orD-9A-R45" kind="show" id="k8P-oa-GdV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -958,6 +975,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8A-5Q-sF1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3292.753623188406" y="1806.0267857142856"/>
+        </scene>
+        <!--Classic Constraints Scroll View With Explore More-->
+        <scene sceneID="cEk-WD-SzF">
+            <objects>
+                <viewController storyboardIdentifier="ClassicConstraintsScrollViewController+EM" id="orD-9A-R45" customClass="ClassicConstraintsScrollViewWithExploreMore" customModule="TaboolaSDKExampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="neg-09-CSo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPq-F8-H0C">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g74-P4-vl2">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2429"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="zP0-pl-JhD" userLabel="topWidget">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RR-Ix-lQx">
+                                                <rect key="frame" x="0.0" y="200" width="414" height="2029"/>
+                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                                <string key="text">Interdum et malesuada fames ac ante ipsum! \n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lacus lorem, tristique vel molestie sed, laoreet in felis. Pellentesque consectetur massa libero, in bibendum nisl euismod ultricies. Vestibulum eros neque, venenatis id luctus id, ornare eu lorem. Duis elementum neque ut erat elementum fermentum eget eget libero. Duis nisl odio, bibendum vel lobortis eget, accumsan vitae urna. Aenean mauris leo, convallis nec porta in, auctor at dui. In a diam sit amet orci facilisis feugiat a tristique urna. Duis vitae malesuada tellus. \n\nPhasellus placerat molestie sapien, non pulvinar risus accumsan non. Phasellus tincidunt eget enim ac dignissim. In id velit et purus egestas luctus quis ac risus. In rhoncus, elit quis Interdum et malesuada fames ac ante ipsum! \n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lacus lorem, tristique vel molestie sed, laoreet in felis. Pellentesque consectetur massa libero, in bibendum nisl euismod ultricies. Vestibulum eros neque, venenatis id luctus id, ornare eu lorem. Duis elementum neque ut erat elementum fermentum eget eget libero. Duis nisl odio, bibendum vel lobortis eget, accumsan vitae urna. Aenean mauris leo, convallis nec porta in, auctor at dui. In a diam sit amet orci facilisis feugiat a tristique urna. Duis vitae malesuada tellus. \n\nPhasellus placerat molestie sapien, non pulvinar risus accumsan non. Phasellus tincidunt eget enim ac dignissim. In id velit et purus egestas luctus quis ac risus. In rhoncus, elit quis Interdum et malesuada fames ac ante ipsum! \n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lacus lorem, tristique vel molestie sed, laoreet in felis. Pellentesque consectetur massa libero, in bibendum nisl euismod ultricies. Vestibulum eros neque, venenatis id luctus id, ornare eu lorem. Duis elementum neque ut erat elementum fermentum eget eget libero. Duis nisl odio, bibendum vel lobortis eget, accumsan vitae urna. Aenean mauris leo, convallis nec porta in, auctor at dui. In a diam sit amet orci facilisis feugiat a tristique urna. Duis vitae malesuada tellus. \n\nPhasellus placerat molestie sapien, non pulvinar risus accumsan non. Phasellus tincidunt eget enim ac dignissim. In id velit et purus egestas luctus quis ac risus. In rhoncus, elit quis Interdum et malesuada fames ac ante ipsum! \n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lacus lorem, tristique vel molestie sed, laoreet in felis. Pellentesque consectetur massa libero, in bibendum nisl euismod ultricies. Vestibulum eros neque, venenatis id luctus id, ornare eu lorem. Duis elementum neque ut erat elementum fermentum eget eget libero. Duis nisl odio, bibendum vel lobortis eget, accumsan vitae urna. Aenean mauris leo, convallis nec porta in, auctor at dui. In a diam sit amet orci facilisis feugiat a tristique urna. Duis vitae malesuada tellus. \n\nPhasellus placerat molestie sapien, non pulvinar risus accumsan non. Phasellus tincidunt eget enim ac dignissim. In id velit et purus egestas luctus quis ac risus. In rhoncus, elit quis Interdum et malesuada fames ac ante ipsum! \n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lacus lorem, tristique vel molestie sed, laoreet in felis. Pellentesque consectetur massa libero, in bibendum nisl euismod ultricies. Vestibulum eros neque, venenatis id luctus id, ornare eu lorem. Duis elementum neque ut erat elementum fermentum eget eget libero. Duis nisl odio, bibendum vel lobortis eget, accumsan vitae urna. Aenean mauris leo, convallis nec porta in, auctor at dui. In a diam sit amet orci facilisis feugiat a tristique urna. Duis vitae malesuada tellus. \n\nPhasellus placerat molestie sapien, non pulvinar risus accumsan non. Phasellus tincidunt eget enim ac dignissim. In id velit et purus egestas luctus quis ac risus. In rhoncus, elit quis Interdum et malesuada fames ac ante ipsum! \n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lacus lorem, tristique vel molestie sed, laoreet in felis. Pellentesque consectetur massa libero, in bibendum nisl euismod ultricies. Vestibulum eros neque, venenatis id luctus id, ornare eu lorem. Duis elementum neque ut erat elementum fermentum eget eget libero. Duis nisl odio, bibendum vel lobortis eget, accumsan vitae urna. Aenean mauris leo, convallis nec porta in, auctor at dui. In a diam sit amet orci facilisis feugiat a tristique urna. Duis vitae malesuada tellus. \n\nPhasellus placerat molestie sapien, non pulvinar risus accumsan non. Phasellus tincidunt eget enim ac dignissim. In id velit et purus egestas luctus quis ac risus. In rhoncus, elit quis Interdum et malesuada fames ac ante ipsum! \n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lacus lorem, tristique vel molestie sed, laoreet in felis. Pellentesque consectetur massa libero, in bibendum nisl euismod ultricies. Vestibulum eros neque, venenatis id luctus id, ornare eu lorem. Duis elementum neque ut erat elementum fermentum eget eget libero. Duis nisl odio, bibendum vel lobortis eget, accumsan vitae urna. Aenean mauris leo, convallis nec porta in, auctor at dui. In a diam sit amet orci facilisis feugiat a tristique urna. Duis vitae malesuada tellus. \n\nPhasellus placerat molestie sapien, non pulvinar risus accumsan non. Phasellus tincidunt eget enim ac dignissim. In id velit et purus egestas luctus quis ac risus. In rhoncus, elit quis Interdum et malesuada fames ac ante ipsum! \n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lacus lorem, tristique vel molestie sed, laoreet in felis. Pellentesque consectetur massa libero, in bibendum nisl euismod ultricies. Vestibulum eros neque, venenatis id luctus id, ornare eu lorem. Duis elementum neque ut erat elementum fermentum eget eget libero. Duis nisl odio, bibendum vel lobortis eget, accumsan vitae urna. Aenean mauris leo, convallis nec porta in, auctor at dui. In a diam sit amet orci facilisis feugiat a tristique urna. Duis vitae malesuada tellus. \n\nPhasellus placerat molestie sapien, non pulvinar risus accumsan non. Phasellus tincidunt eget enim ac dignissim. In id velit et purus egestas luctus quis ac risus. In rhoncus, elit quis </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="6uD-li-tVK" userLabel="belowWidget">
+                                                <rect key="frame" x="0.0" y="2229" width="414" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="9RR-Ix-lQx" secondAttribute="trailing" id="0kl-HK-Bub"/>
+                                            <constraint firstItem="9RR-Ix-lQx" firstAttribute="top" secondItem="zP0-pl-JhD" secondAttribute="bottom" id="5rQ-Uh-xHO"/>
+                                            <constraint firstItem="zP0-pl-JhD" firstAttribute="leading" secondItem="g74-P4-vl2" secondAttribute="leading" id="Guf-E2-IZZ"/>
+                                            <constraint firstItem="9RR-Ix-lQx" firstAttribute="leading" secondItem="g74-P4-vl2" secondAttribute="leading" id="Qec-bW-dyb"/>
+                                            <constraint firstAttribute="bottom" secondItem="6uD-li-tVK" secondAttribute="bottom" id="W1N-cf-a20"/>
+                                            <constraint firstAttribute="trailing" secondItem="zP0-pl-JhD" secondAttribute="trailing" id="dQK-eG-SVM"/>
+                                            <constraint firstItem="zP0-pl-JhD" firstAttribute="top" secondItem="g74-P4-vl2" secondAttribute="top" id="eaC-fd-eat"/>
+                                            <constraint firstItem="6uD-li-tVK" firstAttribute="top" secondItem="9RR-Ix-lQx" secondAttribute="bottom" id="hkO-Sj-WUH"/>
+                                            <constraint firstAttribute="trailing" secondItem="6uD-li-tVK" secondAttribute="trailing" id="hrX-cu-TuS"/>
+                                            <constraint firstItem="6uD-li-tVK" firstAttribute="leading" secondItem="g74-P4-vl2" secondAttribute="leading" id="zeh-8C-HTe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="g74-P4-vl2" secondAttribute="bottom" id="4Xq-02-v5k"/>
+                                    <constraint firstItem="g74-P4-vl2" firstAttribute="leading" secondItem="oPq-F8-H0C" secondAttribute="leading" id="Ewf-Sq-8Cd"/>
+                                    <constraint firstItem="g74-P4-vl2" firstAttribute="width" secondItem="oPq-F8-H0C" secondAttribute="width" id="L1i-xx-FHX"/>
+                                    <constraint firstItem="g74-P4-vl2" firstAttribute="top" secondItem="oPq-F8-H0C" secondAttribute="top" id="TQa-WQ-698"/>
+                                    <constraint firstAttribute="trailing" secondItem="g74-P4-vl2" secondAttribute="trailing" id="fdz-D4-Uia"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JcA-lA-sW2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oPq-F8-H0C" firstAttribute="leading" secondItem="JcA-lA-sW2" secondAttribute="leading" id="95X-ky-zuw"/>
+                            <constraint firstItem="JcA-lA-sW2" firstAttribute="bottom" secondItem="oPq-F8-H0C" secondAttribute="bottom" id="hf9-iD-Vo0"/>
+                            <constraint firstItem="oPq-F8-H0C" firstAttribute="top" secondItem="JcA-lA-sW2" secondAttribute="top" id="ihN-F1-rrT"/>
+                            <constraint firstItem="JcA-lA-sW2" firstAttribute="trailing" secondItem="oPq-F8-H0C" secondAttribute="trailing" id="pMv-bb-iKt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zu8-iz-s4p"/>
+                    <connections>
+                        <outlet property="bottomFeed" destination="6uD-li-tVK" id="P2k-8k-ErL"/>
+                        <outlet property="scrollView" destination="oPq-F8-H0C" id="hdP-yh-mNx"/>
+                        <outlet property="topWidget" destination="zP0-pl-JhD" id="kZv-fq-07M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cVl-f6-Oid" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4141" y="1806"/>
         </scene>
     </scenes>
     <resources>

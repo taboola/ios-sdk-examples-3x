@@ -28,7 +28,7 @@ struct ClassicLazyVStack: View {
                 LoremText()
                 ClassicUnitSwiftUI(pageWrapper: pageWrapper,
                                    placement: Constants.feedPlacement,
-                                   mode: Constants.mode,
+                                   mode: Constants.feedMode,
                                    height: $feedHeight).frame(height: feedHeight)
             }
         }

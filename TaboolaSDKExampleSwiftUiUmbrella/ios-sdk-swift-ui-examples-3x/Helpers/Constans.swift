@@ -9,15 +9,19 @@ import Foundation
 
 enum Constants {
     // General
-    static let publisherName = "sdk-tester-rnd"
-    static let apiKey = "c4c6a04f0b48c7992ff477c89a28ef8d41932d12"
+    static let publisherName = "sdk-tester-demo"
+    static let apiKey = "30dfcf6b094361ccc367bbbef5973bdaa24dbcd6"
     
     // Classic
     static let article = "article"
     static let pageUrl = "http://www.example.com"
-    static let mode = "alternating-widget-without-video"
+    static let mode = "alternating-widget-without-video-1x4"
+    static let feedMode = "thumbs-feed-01"
     static let widgetPlacement = "alternating-widget-without-video-1x1"
     static let feedPlacement = "Feed without video"
+    // Explore More
+    static let placementExploreMore = "Feed - Explore More"
+    static let customSegment = "subscriber"
     
     // Native
     static let nativePlacement = "Below Article Thumbnails"

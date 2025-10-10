@@ -40,7 +40,7 @@ struct taboolaFeed: View {
     var body: some View {
             ClassicUnitSwiftUI(pageWrapper: pageWrapper,
                                placement: Constants.feedPlacement,
-                               mode: Constants.mode,
+                               mode: Constants.feedMode,
                                height: $feedHeight).frame(height: feedHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }

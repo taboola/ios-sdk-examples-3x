@@ -39,7 +39,7 @@ struct ClassicLazyVGrid: View {
                     default:
                         ClassicUnitSwiftUI(pageWrapper: pageWrapper,
                                            placement: Constants.feedPlacement,
-                                           mode: Constants.mode,
+                                           mode: Constants.feedMode,
                                            height: $feedHeight).frame(height:feedHeight)
                             .background(colors[index % colors.count])
                             .cornerRadius(8)
